@@ -1,0 +1,18 @@
+{"time":"2024-11-15T00:32:28.521660669-05:00","level":"INFO","msg":"using version","core version":"0.18.2"}
+{"time":"2024-11-15T00:32:28.52167233-05:00","level":"INFO","msg":"created symlink","path":"/home/liu.ten/demo/test_wandb/wandb/run-20241115_003228-p2o5dpoq/logs/debug-core.log"}
+{"time":"2024-11-15T00:32:28.525184949-05:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-11-15T00:32:28.548543923-05:00","level":"INFO","msg":"created new stream","id":"p2o5dpoq"}
+{"time":"2024-11-15T00:32:28.548591161-05:00","level":"INFO","msg":"stream: started","id":"p2o5dpoq"}
+{"time":"2024-11-15T00:32:28.548626097-05:00","level":"INFO","msg":"sender: started","stream_id":{"value":"p2o5dpoq"}}
+{"time":"2024-11-15T00:32:28.548652787-05:00","level":"INFO","msg":"handler: started","stream_id":{"value":"p2o5dpoq"}}
+{"time":"2024-11-15T00:32:28.548642327-05:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"p2o5dpoq"}}
+{"time":"2024-11-15T00:32:28.711708394-05:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-11-15T00:32:28.71809321-05:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-15T01:21:45.205192523-05:00","level":"INFO","msg":"stream: closing","id":"p2o5dpoq"}
+{"time":"2024-11-15T01:21:45.205341863-05:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-15T01:21:45.221845806-05:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-15T01:21:45.61875661-05:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-15T01:21:45.707367078-05:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"p2o5dpoq"}}
+{"time":"2024-11-15T01:21:45.707440075-05:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"p2o5dpoq"}}
+{"time":"2024-11-15T01:21:45.707471995-05:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"p2o5dpoq"}}
+{"time":"2024-11-15T01:21:45.709475683-05:00","level":"INFO","msg":"stream: closed","id":"p2o5dpoq"}

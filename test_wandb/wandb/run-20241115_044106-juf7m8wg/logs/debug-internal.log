@@ -1,0 +1,10 @@
+{"time":"2024-11-15T04:41:06.059404859-05:00","level":"INFO","msg":"using version","core version":"0.18.2"}
+{"time":"2024-11-15T04:41:06.059418565-05:00","level":"INFO","msg":"created symlink","path":"/home/liu.ten/demo/test_wandb/wandb/run-20241115_044106-juf7m8wg/logs/debug-core.log"}
+{"time":"2024-11-15T04:41:06.060881389-05:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-11-15T04:41:06.071412922-05:00","level":"INFO","msg":"created new stream","id":"juf7m8wg"}
+{"time":"2024-11-15T04:41:06.071453067-05:00","level":"INFO","msg":"stream: started","id":"juf7m8wg"}
+{"time":"2024-11-15T04:41:06.0715185-05:00","level":"INFO","msg":"sender: started","stream_id":{"value":"juf7m8wg"}}
+{"time":"2024-11-15T04:41:06.071548226-05:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"juf7m8wg"}}
+{"time":"2024-11-15T04:41:06.071487883-05:00","level":"INFO","msg":"handler: started","stream_id":{"value":"juf7m8wg"}}
+{"time":"2024-11-15T04:41:06.274702778-05:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-11-15T04:41:06.279475089-05:00","level":"INFO","msg":"Starting system monitor"}

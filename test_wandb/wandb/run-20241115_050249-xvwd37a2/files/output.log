@@ -1,0 +1,78 @@
+/home/liu.ten/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/home/liu.ten/demo/SLAM-LLM/src/slam_llm/models/encoder.py:112: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_config.encoder_path)
+[2024-11-15 05:02:51][slam_llm.models.wavlm.WavLM][INFO] - WavLM Config: {'extractor_mode': 'layer_norm', 'encoder_layers': 24, 'encoder_embed_dim': 1024, 'encoder_ffn_embed_dim': 4096, 'encoder_attention_heads': 16, 'activation_fn': 'gelu', 'layer_norm_first': True, 'conv_feature_layers': '[(512,10,5)] + [(512,3,2)] * 4 + [(512,2,2)] * 2', 'conv_bias': False, 'feature_grad_mult': 1.0, 'normalize': True, 'dropout': 0.0, 'attention_dropout': 0.0, 'activation_dropout': 0.0, 'encoder_layerdrop': 0.0, 'dropout_input': 0.0, 'dropout_features': 0.0, 'mask_length': 10, 'mask_prob': 0.8, 'mask_selection': 'static', 'mask_other': 0.0, 'no_mask_overlap': False, 'mask_min_space': 1, 'mask_channel_length': 10, 'mask_channel_prob': 0.0, 'mask_channel_selection': 'static', 'mask_channel_other': 0.0, 'no_mask_channel_overlap': False, 'mask_channel_min_space': 1, 'conv_pos': 128, 'conv_pos_groups': 16, 'relative_position_embedding': True, 'num_buckets': 320, 'max_distance': 800, 'gru_rel_pos': True}
+/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/nn/utils/weight_norm.py:143: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+[2024-11-15 05:02:55][slam_llm.utils.train_utils][INFO] - --> Module wavlm
+[2024-11-15 05:02:55][slam_llm.utils.train_utils][INFO] - --> wavlm has 315.45312 Million params
+
+[2024-11-15 05:02:55][slam_llm.utils.train_utils][INFO] - --> Module wavlm
+[2024-11-15 05:02:55][slam_llm.utils.train_utils][INFO] - --> wavlm has 0.0 Million params
+
+[2024-11-15 05:03:02][slam_llm.utils.train_utils][INFO] - --> Module TinyLlama-1.1B
+[2024-11-15 05:03:02][slam_llm.utils.train_utils][INFO] - --> TinyLlama-1.1B has 1100.05248 Million params
+
+[2024-11-15 05:03:02][slam_llm.utils.train_utils][INFO] - --> Module TinyLlama-1.1B
+[2024-11-15 05:03:02][slam_llm.utils.train_utils][INFO] - --> TinyLlama-1.1B has 0.0 Million params
+
+[2024-11-15 05:03:02][slam_llm.utils.train_utils][INFO] - --> Module linear
+[2024-11-15 05:03:02][slam_llm.utils.train_utils][INFO] - --> linear has 14.68416 Million params
+
+[2024-11-15 05:03:02][root][INFO] - Initializing model with experiment type: audio_and_text
+[2024-11-15 05:03:02][slam_llm.utils.train_utils][INFO] - --> Model hate_speech_detection
+[2024-11-15 05:03:02][slam_llm.utils.train_utils][INFO] - --> hate_speech_detection has 14.68416 Million params
+
+[2024-11-15 05:03:03][root][INFO] - dataset_config: {'dataset': 'speech_dataset', 'file': 'src/slam_llm/datasets/speech_dataset.py:get_speech_dataset', 'train_data_path': '/home/liu.ten/demo/SLAM-LLM/examples/asr_librispeech/train_data.jsonl', 'val_data_path': '/home/liu.ten/demo/SLAM-LLM/examples/asr_librispeech/validation_data.jsonl', 'train_split': 'train', 'test_split': 'validation', 'prompt': '', 'use_data_augmentation': True, 'data_path': None, 'max_words': None, 'max_mel': None, 'fix_length_audio': -1, 'inference_mode': False, 'input_type': 'raw', 'mel_size': 80, 'normalize': True}
+[2024-11-15 05:03:03][speech_dataset.py][INFO] - Dataset initialized with experiment_type: audio_only
+Data augmentation enabled for train split
+[2024-11-15 05:03:03][root][INFO] - --> Training Set Length = 400
+[2024-11-15 05:03:03][speech_dataset.py][INFO] - Dataset initialized with experiment_type: audio_only
+[2024-11-15 05:03:03][root][INFO] - --> Validation Set Length = 50
+[2024-11-15 05:03:03][slam_llm.utils.config_utils][INFO] - Using batching strategy: custom
+[2024-11-15 05:03:03][slam_llm.utils.config_utils][INFO] - Using batching strategy: custom
+/home/liu.ten/demo/SLAM-LLM/src/slam_llm/utils/train_utils.py:76: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler()
+/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/cuda/memory.py:365: FutureWarning: torch.cuda.reset_max_memory_allocated now calls torch.cuda.reset_peak_memory_stats, which resets /all/ peak memory stats.
+  warnings.warn(
+Training Epoch: 1:   0%|[34m                                                                                                                       [0m| 0/50 [00:00<?, ?it/s][0m/home/liu.ten/demo/SLAM-LLM/src/slam_llm/utils/train_utils.py:115: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+[2024-11-15 05:03:07][slam_model_asr.py][INFO] - Training with experiment type: audio_and_text
+[2024-11-15 05:03:07][slam_model_asr.py][INFO] - Batch keys: dict_keys(['input_ids', 'labels', 'attention_mask', 'audio', 'audio_mask', 'audio_mel', 'audio_mel_post_mask', 'modality_mask'])
+/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+Error executing job with overrides: ['++train_config.enable_fsdp=false', '++train_config.enable_ddp=true', '++train_config.use_fp16=true', '++model_config.llm_name=TinyLlama-1.1B', '++model_config.llm_path=TinyLlama/TinyLlama-1.1B-Chat-v0.1', '++model_config.llm_dim=2048', '++model_config.encoder_name=wavlm', '++model_config.normalize=true', '++dataset_config.normalize=true', '++model_config.encoder_projector_ds_rate=5', '++model_config.encoder_path=/home/liu.ten/demo/SLAM-LLM/src/slam_llm/models/WavLM-Large.pt', '++model_config.experiment_type=audio_and_text', '++model_config.encoder_dim=1024', '++model_config.encoder_projector=linear', '++dataset_config.dataset=speech_dataset', '++dataset_config.train_data_path=/home/liu.ten/demo/SLAM-LLM/examples/asr_librispeech/train_data.jsonl', '++dataset_config.val_data_path=/home/liu.ten/demo/SLAM-LLM/examples/asr_librispeech/validation_data.jsonl', '++dataset_config.use_data_augmentation=true', '++dataset_config.input_type=raw', '++train_config.model_name=hate_speech_detection', '++train_config.experiment_type=audio_and_text', '++train_config.num_epochs=120', '++train_config.freeze_encoder=true', '++train_config.freeze_llm=true', '++train_config.batching_strategy=custom', '++train_config.warmup_steps=1000', '++train_config.total_steps=100000', '++train_config.lr=1e-4', '++train_config.validation_interval=100', '++train_config.batch_size_training=8', '++train_config.val_batch_size=5', '++train_config.num_workers_dataloader=4', '++train_config.output_dir=/home/liu.ten/demo/tmp/audio_and_text-TinyLlama-1.1B-librispeech-linear-steplrwarmupkeep1e-4-wavlm-large-20241115', '++log_config.wandb_exp_name=experiment_2_audio_and_text', '++metric=acc']
+Traceback (most recent call last):
+  File "/home/liu.ten/demo/SLAM-LLM/examples/asr_librispeech/finetune_asr.py", line 45, in main_hydra
+    train(kwargs)
+  File "/home/liu.ten/demo/SLAM-LLM/src/slam_llm/pipeline/finetune.py", line 286, in main
+    results = train(
+              ^^^^^^
+  File "/home/liu.ten/demo/SLAM-LLM/src/slam_llm/utils/train_utils.py", line 116, in train
+    outputs, *rest = model(**batch)
+                     ^^^^^^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/nn/parallel/distributed.py", line 1643, in forward
+    else self._run_ddp_forward(*inputs, **kwargs)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/nn/parallel/distributed.py", line 1459, in _run_ddp_forward
+    return self.module(*inputs, **kwargs)  # type: ignore[index]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "examples/asr_librispeech/model/slam_model_asr.py", line 193, in forward
+    predicted_token_ids = torch.argmax(logits, dim=-1)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: argmax(): argument 'input' (position 1) must be Tensor, not CausalLMOutputWithPast
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

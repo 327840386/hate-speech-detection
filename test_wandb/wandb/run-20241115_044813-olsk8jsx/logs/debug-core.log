@@ -1,0 +1,12 @@
+{"time":"2024-11-15T04:48:13.59360554-05:00","level":"INFO","msg":"started logging, with flags","port-filename":"/tmp/tmpi_tnf5e_/port-53980.txt","pid":53980,"debug":false,"disable-analytics":false}
+{"time":"2024-11-15T04:48:13.59364264-05:00","level":"INFO","msg":"FeatureState","shutdownOnParentExitEnabled":false}
+{"time":"2024-11-15T04:48:13.594566142-05:00","level":"INFO","msg":"Will exit if parent process dies.","ppid":53980}
+{"time":"2024-11-15T04:48:13.594523352-05:00","level":"INFO","msg":"server is running","addr":{"IP":"127.0.0.1","Port":36191,"Zone":""}}
+{"time":"2024-11-15T04:48:13.783872149-05:00","level":"INFO","msg":"created new connection","id":"127.0.0.1:33702"}
+{"time":"2024-11-15T04:48:13.992467255-05:00","level":"INFO","msg":"connection init received","streamId":"olsk8jsx","id":"127.0.0.1:33702"}
+{"time":"2024-11-15T04:48:14.006391752-05:00","level":"INFO","msg":"connection init completed","streamId":"olsk8jsx","id":"127.0.0.1:33702"}
+{"time":"2024-11-15T04:48:28.892068421-05:00","level":"INFO","msg":"connection: teardown","id":"127.0.0.1:33702"}
+{"time":"2024-11-15T04:48:28.892548461-05:00","level":"INFO","msg":"server is shutting down"}
+{"time":"2024-11-15T04:48:28.892563599-05:00","level":"INFO","msg":"closed connection","id":"127.0.0.1:33702"}
+{"time":"2024-11-15T04:48:29.374143593-05:00","level":"INFO","msg":"connection closed","id":"127.0.0.1:33702"}
+{"time":"2024-11-15T04:48:29.374157769-05:00","level":"INFO","msg":"server is closed"}

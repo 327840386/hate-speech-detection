@@ -1,0 +1,18 @@
+{"time":"2024-11-15T02:44:06.963476386-05:00","level":"INFO","msg":"using version","core version":"0.18.2"}
+{"time":"2024-11-15T02:44:06.963486545-05:00","level":"INFO","msg":"created symlink","path":"/home/liu.ten/demo/test_wandb/wandb/run-20241115_024406-yshddom9/logs/debug-core.log"}
+{"time":"2024-11-15T02:44:06.96483788-05:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-11-15T02:44:06.973372839-05:00","level":"INFO","msg":"created new stream","id":"yshddom9"}
+{"time":"2024-11-15T02:44:06.97341035-05:00","level":"INFO","msg":"stream: started","id":"yshddom9"}
+{"time":"2024-11-15T02:44:06.973441218-05:00","level":"INFO","msg":"sender: started","stream_id":{"value":"yshddom9"}}
+{"time":"2024-11-15T02:44:06.973439795-05:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"yshddom9"}}
+{"time":"2024-11-15T02:44:06.97345315-05:00","level":"INFO","msg":"handler: started","stream_id":{"value":"yshddom9"}}
+{"time":"2024-11-15T02:44:07.136164411-05:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-11-15T02:44:07.141065916-05:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-15T02:49:32.854259119-05:00","level":"INFO","msg":"stream: closing","id":"yshddom9"}
+{"time":"2024-11-15T02:49:32.854421083-05:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-15T02:49:32.85868957-05:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-15T02:49:33.202103329-05:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-15T02:49:33.306584492-05:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"yshddom9"}}
+{"time":"2024-11-15T02:49:33.306617695-05:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"yshddom9"}}
+{"time":"2024-11-15T02:49:33.3067271-05:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"yshddom9"}}
+{"time":"2024-11-15T02:49:33.308077834-05:00","level":"INFO","msg":"stream: closed","id":"yshddom9"}

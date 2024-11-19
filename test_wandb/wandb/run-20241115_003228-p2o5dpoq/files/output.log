@@ -1,0 +1,706 @@
+/home/liu.ten/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/home/liu.ten/demo/SLAM-LLM/src/slam_llm/models/encoder.py:112: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_config.encoder_path)
+[2024-11-15 00:32:30][slam_llm.models.wavlm.WavLM][INFO] - WavLM Config: {'extractor_mode': 'layer_norm', 'encoder_layers': 24, 'encoder_embed_dim': 1024, 'encoder_ffn_embed_dim': 4096, 'encoder_attention_heads': 16, 'activation_fn': 'gelu', 'layer_norm_first': True, 'conv_feature_layers': '[(512,10,5)] + [(512,3,2)] * 4 + [(512,2,2)] * 2', 'conv_bias': False, 'feature_grad_mult': 1.0, 'normalize': True, 'dropout': 0.0, 'attention_dropout': 0.0, 'activation_dropout': 0.0, 'encoder_layerdrop': 0.0, 'dropout_input': 0.0, 'dropout_features': 0.0, 'mask_length': 10, 'mask_prob': 0.8, 'mask_selection': 'static', 'mask_other': 0.0, 'no_mask_overlap': False, 'mask_min_space': 1, 'mask_channel_length': 10, 'mask_channel_prob': 0.0, 'mask_channel_selection': 'static', 'mask_channel_other': 0.0, 'no_mask_channel_overlap': False, 'mask_channel_min_space': 1, 'conv_pos': 128, 'conv_pos_groups': 16, 'relative_position_embedding': True, 'num_buckets': 320, 'max_distance': 800, 'gru_rel_pos': True}
+/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/nn/utils/weight_norm.py:143: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+[2024-11-15 00:32:34][slam_llm.utils.train_utils][INFO] - --> Module wavlm
+[2024-11-15 00:32:34][slam_llm.utils.train_utils][INFO] - --> wavlm has 315.45312 Million params
+
+[2024-11-15 00:32:34][slam_llm.utils.train_utils][INFO] - --> Module wavlm
+[2024-11-15 00:32:34][slam_llm.utils.train_utils][INFO] - --> wavlm has 0.0 Million params
+
+[2024-11-15 00:32:40][slam_llm.utils.train_utils][INFO] - --> Module TinyLlama-1.1B
+[2024-11-15 00:32:40][slam_llm.utils.train_utils][INFO] - --> TinyLlama-1.1B has 1100.05248 Million params
+
+[2024-11-15 00:32:40][slam_llm.utils.train_utils][INFO] - --> Module TinyLlama-1.1B
+[2024-11-15 00:32:40][slam_llm.utils.train_utils][INFO] - --> TinyLlama-1.1B has 0.0 Million params
+
+[2024-11-15 00:32:40][slam_llm.utils.train_utils][INFO] - --> Module linear
+[2024-11-15 00:32:40][slam_llm.utils.train_utils][INFO] - --> linear has 14.68416 Million params
+
+[2024-11-15 00:32:40][slam_llm.utils.train_utils][INFO] - --> Model hate_speech_detection
+[2024-11-15 00:32:40][slam_llm.utils.train_utils][INFO] - --> hate_speech_detection has 14.68416 Million params
+
+[2024-11-15 00:32:42][root][INFO] - dataset_config: {'dataset': 'speech_dataset', 'file': 'src/slam_llm/datasets/speech_dataset.py:get_speech_dataset', 'train_data_path': '/home/liu.ten/demo/SLAM-LLM/examples/asr_librispeech/train_data.jsonl', 'val_data_path': '/home/liu.ten/demo/SLAM-LLM/examples/asr_librispeech/validation_data.jsonl', 'train_split': 'train', 'test_split': 'validation', 'prompt': '', 'use_data_augmentation': True, 'data_path': None, 'max_words': None, 'max_mel': None, 'fix_length_audio': -1, 'inference_mode': False, 'input_type': 'raw', 'mel_size': 80, 'normalize': True}
+Data augmentation enabled for train split
+[2024-11-15 00:32:42][root][INFO] - --> Training Set Length = 400
+[2024-11-15 00:32:42][root][INFO] - --> Validation Set Length = 50
+[2024-11-15 00:32:42][slam_llm.utils.config_utils][INFO] - Using batching strategy: custom
+[2024-11-15 00:32:42][slam_llm.utils.config_utils][INFO] - Using batching strategy: custom
+/home/liu.ten/demo/SLAM-LLM/src/slam_llm/utils/train_utils.py:76: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler()
+/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/cuda/memory.py:365: FutureWarning: torch.cuda.reset_max_memory_allocated now calls torch.cuda.reset_peak_memory_stats, which resets /all/ peak memory stats.
+  warnings.warn(
+Training Epoch: 1:   0%|[34m                                                                                                         [0m| 0/50 [00:00<?, ?it/s][0m/home/liu.ten/demo/SLAM-LLM/src/slam_llm/utils/train_utils.py:115: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+/home/liu.ten/demo/SLAM-LLM/src/slam_llm/utils/train_utils.py:121: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  total_acc += torch.tensor(acc, device=loss.device)
+Training Epoch: 1/100, step 49/50 completed (loss: 4.404201030731201, acc: 0.1875): 100%|[34m███████████████████████████████[0m| 50/50 [00:37<00:00,  1.32it/s][0m
+[2024-11-15 00:33:21][slam_llm.utils.train_utils][INFO] - Epoch 1: train_perplexity=72220.2812, train_epoch_loss=11.1875, epoch time 38.4732497301884s
+[2024-11-15 00:33:21][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 19 GB
+[2024-11-15 00:33:21][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 20 GB
+[2024-11-15 00:33:21][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 19 GB
+[2024-11-15 00:33:21][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:33:21][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 3 GB
+Training Epoch: 2/100, step 49/50 completed (loss: 0.4851323366165161, acc: 0.8125): 100%|[34m██████████████████████████████[0m| 50/50 [00:36<00:00,  1.87it/s][0m/home/liu.ten/demo/SLAM-LLM/src/slam_llm/utils/train_utils.py:428: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():[32m                                                                                                                [0m| 0/10 [00:00<?, ?it/s][0m
+Step: 10/10, Loss: 0.5930, Acc: 0.8700: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:05<00:00,  1.68it/s][0m
+/home/liu.ten/demo/SLAM-LLM/src/slam_llm/utils/train_utils.py:469: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  eval_epoch_loss_tensor = torch.tensor(eval_epoch_loss).to(device)
+[2024-11-15 00:34:05][slam_llm.utils.train_utils][INFO] - llm is frozen, we are about to save other parts.
+[2024-11-15 00:34:05][slam_llm.utils.checkpoint_handler][INFO] - --> saving model ...
+[2024-11-15 00:34:05][slam_llm.utils.checkpoint_handler][INFO] - encoder saved at /home/liu.ten/demo/tmp/audio_only-TinyLlama-1.1B-librispeech-linear-steplrwarmupkeep1e-4-wavlm-large-20241115/hate_speech_detection_epoch_2_step_50/model.pt
+[2024-11-15 00:34:05][slam_llm.utils.train_utils][INFO] - New best accuracy on epoch 2: 0.8700
+[2024-11-15 00:34:05][slam_llm.utils.train_utils][INFO] - best eval loss on epoch 2 is 0.5930285453796387
+Training Epoch: 2/100, step 49/50 completed (loss: 0.4851323366165161, acc: 0.8125): 100%|[34m██████████████████████████████[0m| 50/50 [00:44<00:00,  1.13it/s][0m
+[2024-11-15 00:34:05][slam_llm.utils.train_utils][INFO] - Epoch 2: train_perplexity=4.7596, train_epoch_loss=1.5602, epoch time 44.52149435784668s
+[2024-11-15 00:34:05][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 00:34:05][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 00:34:05][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 00:34:05][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:34:05][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 5 GB
+Training Epoch: 3/100, step 49/50 completed (loss: 0.28026139736175537, acc: 0.8125): 100%|[34m█████████████████████████████[0m| 50/50 [00:34<00:00,  1.44it/s][0m
+[2024-11-15 00:34:41][slam_llm.utils.train_utils][INFO] - Epoch 3: train_perplexity=1.4746, train_epoch_loss=0.3884, epoch time 35.44953951286152s
+[2024-11-15 00:34:41][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 17 GB
+[2024-11-15 00:34:41][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 18 GB
+[2024-11-15 00:34:41][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 17 GB
+[2024-11-15 00:34:41][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:34:41][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 5 GB
+Step: 10/10, Loss: 0.3023, Acc: 0.8800: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:06<00:00,  1.61it/s][0m
+Training Epoch: 4/100, step 49/50 completed (loss: 0.1344074308872223, acc: 1.0): 100%|[34m█████████████████████████████████[0m| 50/50 [00:42<00:00,  1.19it/s][0m
+[2024-11-15 00:35:23][slam_llm.utils.train_utils][INFO] - llm is frozen, we are about to save other parts.
+[2024-11-15 00:35:23][slam_llm.utils.checkpoint_handler][INFO] - --> saving model ...
+[2024-11-15 00:35:23][slam_llm.utils.checkpoint_handler][INFO] - encoder saved at /home/liu.ten/demo/tmp/audio_only-TinyLlama-1.1B-librispeech-linear-steplrwarmupkeep1e-4-wavlm-large-20241115/hate_speech_detection_epoch_4_step_50/model.pt
+[2024-11-15 00:35:23][slam_llm.utils.train_utils][INFO] - New best accuracy on epoch 4: 0.8800
+[2024-11-15 00:35:23][slam_llm.utils.train_utils][INFO] - best eval loss on epoch 4 is 0.3022979199886322
+[2024-11-15 00:35:23][slam_llm.utils.train_utils][INFO] - Epoch 4: train_perplexity=1.2999, train_epoch_loss=0.2622, epoch time 42.6178993168287s
+[2024-11-15 00:35:23][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 00:35:23][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 00:35:23][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 00:35:23][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:35:23][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 5 GB
+Training Epoch: 5/100, step 49/50 completed (loss: 0.1427190750837326, acc: 1.0): 100%|[34m█████████████████████████████████[0m| 50/50 [00:33<00:00,  1.47it/s][0m
+[2024-11-15 00:35:58][slam_llm.utils.train_utils][INFO] - Epoch 5: train_perplexity=1.2523, train_epoch_loss=0.2250, epoch time 34.495873297099024s
+[2024-11-15 00:35:58][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 17 GB
+[2024-11-15 00:35:58][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 18 GB
+[2024-11-15 00:35:58][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 17 GB
+[2024-11-15 00:35:58][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:35:58][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 5 GB
+Step: 10/10, Loss: 0.2470, Acc: 0.9200: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:05<00:00,  1.71it/s][0m
+Training Epoch: 6/100, step 49/50 completed (loss: 0.4198698103427887, acc: 0.8125): 100%|[34m██████████████████████████████[0m| 50/50 [00:42<00:00,  1.17it/s][0m
+[2024-11-15 00:36:41][slam_llm.utils.train_utils][INFO] - llm is frozen, we are about to save other parts.
+[2024-11-15 00:36:41][slam_llm.utils.checkpoint_handler][INFO] - --> saving model ...
+[2024-11-15 00:36:41][slam_llm.utils.checkpoint_handler][INFO] - encoder saved at /home/liu.ten/demo/tmp/audio_only-TinyLlama-1.1B-librispeech-linear-steplrwarmupkeep1e-4-wavlm-large-20241115/hate_speech_detection_epoch_6_step_50/model.pt
+[2024-11-15 00:36:41][slam_llm.utils.train_utils][INFO] - New best accuracy on epoch 6: 0.9200
+[2024-11-15 00:36:41][slam_llm.utils.train_utils][INFO] - best eval loss on epoch 6 is 0.24699626863002777
+[2024-11-15 00:36:41][slam_llm.utils.train_utils][INFO] - Epoch 6: train_perplexity=1.1911, train_epoch_loss=0.1748, epoch time 43.40124169923365s
+[2024-11-15 00:36:41][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 00:36:41][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 00:36:41][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 00:36:41][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:36:41][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 7/100, step 49/50 completed (loss: 0.13924427330493927, acc: 0.9375): 100%|[34m█████████████████████████████[0m| 50/50 [00:33<00:00,  1.50it/s][0m
+[2024-11-15 00:37:15][slam_llm.utils.train_utils][INFO] - Epoch 7: train_perplexity=1.3130, train_epoch_loss=0.2723, epoch time 33.780694029759616s
+[2024-11-15 00:37:15][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 17 GB
+[2024-11-15 00:37:15][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 18 GB
+[2024-11-15 00:37:15][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 17 GB
+[2024-11-15 00:37:15][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:37:15][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.1946, Acc: 0.9200: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:05<00:00,  1.70it/s][0m
+Training Epoch: 8/100, step 49/50 completed (loss: 0.04833884537220001, acc: 1.0): 100%|[34m████████████████████████████████[0m| 50/50 [00:49<00:00,  1.01it/s][0m
+[2024-11-15 00:38:04][slam_llm.utils.train_utils][INFO] - best eval loss on epoch 8 is 0.1945909708738327
+[2024-11-15 00:38:05][slam_llm.utils.train_utils][INFO] - Epoch 8: train_perplexity=1.1941, train_epoch_loss=0.1774, epoch time 49.858857181854546s
+[2024-11-15 00:38:05][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 00:38:05][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 00:38:05][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 00:38:05][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:38:05][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 9/100, step 49/50 completed (loss: 0.43597090244293213, acc: 0.8125): 100%|[34m█████████████████████████████[0m| 50/50 [00:42<00:00,  1.18it/s][0m
+[2024-11-15 00:38:48][slam_llm.utils.train_utils][INFO] - Epoch 9: train_perplexity=1.1806, train_epoch_loss=0.1660, epoch time 42.99474232411012s
+[2024-11-15 00:38:48][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 18 GB
+[2024-11-15 00:38:48][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 19 GB
+[2024-11-15 00:38:48][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 18 GB
+[2024-11-15 00:38:48][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:38:48][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.2198, Acc: 0.9200: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:06<00:00,  1.66it/s][0m
+Training Epoch: 10/100, step 49/50 completed (loss: 0.07898182421922684, acc: 1.0): 100%|[34m███████████████████████████████[0m| 50/50 [00:42<00:00,  1.18it/s][0m
+[2024-11-15 00:39:31][slam_llm.utils.train_utils][INFO] - Epoch 10: train_perplexity=1.1414, train_epoch_loss=0.1322, epoch time 42.84366722777486s
+[2024-11-15 00:39:31][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 00:39:31][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 00:39:31][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 00:39:31][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:39:31][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 11/100, step 49/50 completed (loss: 0.3096889853477478, acc: 0.9375): 100%|[34m█████████████████████████████[0m| 50/50 [00:32<00:00,  1.52it/s][0m
+[2024-11-15 00:40:04][slam_llm.utils.train_utils][INFO] - Epoch 11: train_perplexity=1.1588, train_epoch_loss=0.1473, epoch time 33.788047128822654s
+[2024-11-15 00:40:04][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 18 GB
+[2024-11-15 00:40:04][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 19 GB
+[2024-11-15 00:40:04][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 18 GB
+[2024-11-15 00:40:04][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:40:04][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.2145, Acc: 0.9300: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:05<00:00,  1.69it/s][0m
+Training Epoch: 12/100, step 49/50 completed (loss: 0.025665661320090294, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:41<00:00,  1.21it/s][0m
+[2024-11-15 00:40:46][slam_llm.utils.train_utils][INFO] - llm is frozen, we are about to save other parts.
+[2024-11-15 00:40:46][slam_llm.utils.checkpoint_handler][INFO] - --> saving model ...
+[2024-11-15 00:40:46][slam_llm.utils.checkpoint_handler][INFO] - encoder saved at /home/liu.ten/demo/tmp/audio_only-TinyLlama-1.1B-librispeech-linear-steplrwarmupkeep1e-4-wavlm-large-20241115/hate_speech_detection_epoch_12_step_50/model.pt
+[2024-11-15 00:40:46][slam_llm.utils.train_utils][INFO] - New best accuracy on epoch 12: 0.9300
+[2024-11-15 00:40:46][slam_llm.utils.train_utils][INFO] - Epoch 12: train_perplexity=1.1279, train_epoch_loss=0.1203, epoch time 41.79493432678282s
+[2024-11-15 00:40:46][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 00:40:46][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 00:40:46][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 00:40:46][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:40:46][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 13/100, step 49/50 completed (loss: 0.13349471986293793, acc: 0.9375): 100%|[34m████████████████████████████[0m| 50/50 [00:35<00:00,  1.43it/s][0m
+[2024-11-15 00:41:22][slam_llm.utils.train_utils][INFO] - Epoch 13: train_perplexity=1.1728, train_epoch_loss=0.1594, epoch time 35.66356287011877s
+[2024-11-15 00:41:22][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 17 GB
+[2024-11-15 00:41:22][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 18 GB
+[2024-11-15 00:41:22][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 17 GB
+[2024-11-15 00:41:22][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:41:22][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.2341, Acc: 0.9000: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:05<00:00,  1.81it/s][0m
+Training Epoch: 14/100, step 49/50 completed (loss: 0.057993724942207336, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:41<00:00,  1.22it/s][0m
+[2024-11-15 00:42:04][slam_llm.utils.train_utils][INFO] - Epoch 14: train_perplexity=1.0918, train_epoch_loss=0.0878, epoch time 41.86544554308057s
+[2024-11-15 00:42:04][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 00:42:04][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 00:42:04][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 00:42:04][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:42:04][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 15/100, step 49/50 completed (loss: 0.0796792209148407, acc: 1.0): 100%|[34m████████████████████████████████[0m| 50/50 [00:33<00:00,  1.47it/s][0m
+[2024-11-15 00:42:39][slam_llm.utils.train_utils][INFO] - Epoch 15: train_perplexity=1.0727, train_epoch_loss=0.0702, epoch time 34.73117407411337s
+[2024-11-15 00:42:39][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 19 GB
+[2024-11-15 00:42:39][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 20 GB
+[2024-11-15 00:42:39][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 19 GB
+[2024-11-15 00:42:39][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:42:39][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.1668, Acc: 0.9300: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:05<00:00,  1.67it/s][0m
+Training Epoch: 16/100, step 49/50 completed (loss: 0.09727808088064194, acc: 0.9375): 100%|[34m████████████████████████████[0m| 50/50 [00:41<00:00,  1.20it/s][0m
+[2024-11-15 00:43:20][slam_llm.utils.train_utils][INFO] - best eval loss on epoch 16 is 0.16678065061569214
+[2024-11-15 00:43:21][slam_llm.utils.train_utils][INFO] - Epoch 16: train_perplexity=1.0596, train_epoch_loss=0.0579, epoch time 42.30973659502342s
+[2024-11-15 00:43:21][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 00:43:21][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 00:43:21][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 00:43:21][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:43:21][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 17/100, step 49/50 completed (loss: 0.217036634683609, acc: 0.9375): 100%|[34m██████████████████████████████[0m| 50/50 [00:37<00:00,  1.33it/s][0m
+[2024-11-15 00:43:59][slam_llm.utils.train_utils][INFO] - Epoch 17: train_perplexity=1.0882, train_epoch_loss=0.0845, epoch time 38.02911892114207s
+[2024-11-15 00:43:59][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 18 GB
+[2024-11-15 00:43:59][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 18 GB
+[2024-11-15 00:43:59][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 18 GB
+[2024-11-15 00:43:59][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:43:59][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.3404, Acc: 0.9200: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:06<00:00,  1.56it/s][0m
+Training Epoch: 18/100, step 49/50 completed (loss: 0.08884063363075256, acc: 0.9375): 100%|[34m████████████████████████████[0m| 50/50 [00:43<00:00,  1.16it/s][0m
+[2024-11-15 00:44:43][slam_llm.utils.train_utils][INFO] - Epoch 18: train_perplexity=1.0845, train_epoch_loss=0.0811, epoch time 43.77156050875783s
+[2024-11-15 00:44:43][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 00:44:43][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 00:44:43][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 00:44:43][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:44:43][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 19/100, step 49/50 completed (loss: 0.08265751600265503, acc: 0.9375): 100%|[34m████████████████████████████[0m| 50/50 [00:33<00:00,  1.48it/s][0m
+[2024-11-15 00:45:17][slam_llm.utils.train_utils][INFO] - Epoch 19: train_perplexity=1.0945, train_epoch_loss=0.0903, epoch time 34.283341855276376s
+[2024-11-15 00:45:17][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 17 GB
+[2024-11-15 00:45:17][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 18 GB
+[2024-11-15 00:45:17][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 17 GB
+[2024-11-15 00:45:17][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:45:17][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.2164, Acc: 0.9400: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:06<00:00,  1.55it/s][0m
+Training Epoch: 20/100, step 49/50 completed (loss: 0.08840376883745193, acc: 1.0): 100%|[34m███████████████████████████████[0m| 50/50 [00:42<00:00,  1.18it/s][0m
+[2024-11-15 00:45:59][slam_llm.utils.train_utils][INFO] - llm is frozen, we are about to save other parts.
+[2024-11-15 00:45:59][slam_llm.utils.checkpoint_handler][INFO] - --> saving model ...
+[2024-11-15 00:46:00][slam_llm.utils.checkpoint_handler][INFO] - encoder saved at /home/liu.ten/demo/tmp/audio_only-TinyLlama-1.1B-librispeech-linear-steplrwarmupkeep1e-4-wavlm-large-20241115/hate_speech_detection_epoch_20_step_50/model.pt
+[2024-11-15 00:46:00][slam_llm.utils.train_utils][INFO] - New best accuracy on epoch 20: 0.9400
+[2024-11-15 00:46:00][slam_llm.utils.train_utils][INFO] - Epoch 20: train_perplexity=1.0724, train_epoch_loss=0.0699, epoch time 42.980898707173765s
+[2024-11-15 00:46:00][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 00:46:00][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 00:46:00][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 00:46:00][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:46:00][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 21/100, step 49/50 completed (loss: 0.022162185981869698, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:34<00:00,  1.46it/s][0m
+[2024-11-15 00:46:35][slam_llm.utils.train_utils][INFO] - Epoch 21: train_perplexity=1.0545, train_epoch_loss=0.0531, epoch time 34.86612790590152s
+[2024-11-15 00:46:35][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 19 GB
+[2024-11-15 00:46:35][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 20 GB
+[2024-11-15 00:46:35][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 19 GB
+[2024-11-15 00:46:35][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:46:35][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.3350, Acc: 0.9000: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:06<00:00,  1.56it/s][0m
+Training Epoch: 22/100, step 49/50 completed (loss: 0.03284187242388725, acc: 1.0): 100%|[34m███████████████████████████████[0m| 50/50 [00:44<00:00,  1.13it/s][0m
+[2024-11-15 00:47:20][slam_llm.utils.train_utils][INFO] - Epoch 22: train_perplexity=1.0733, train_epoch_loss=0.0707, epoch time 45.0802397178486s
+[2024-11-15 00:47:20][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 00:47:20][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 00:47:20][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 00:47:20][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:47:20][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 23/100, step 49/50 completed (loss: 0.038879718631505966, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:34<00:00,  1.44it/s][0m
+[2024-11-15 00:47:55][slam_llm.utils.train_utils][INFO] - Epoch 23: train_perplexity=1.0555, train_epoch_loss=0.0540, epoch time 35.24210487306118s
+[2024-11-15 00:47:55][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 18 GB
+[2024-11-15 00:47:55][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 19 GB
+[2024-11-15 00:47:55][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 18 GB
+[2024-11-15 00:47:55][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:47:55][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.3243, Acc: 0.9000: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:06<00:00,  1.59it/s][0m
+Training Epoch: 24/100, step 49/50 completed (loss: 0.014135989360511303, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:41<00:00,  1.20it/s][0m
+[2024-11-15 00:48:37][slam_llm.utils.train_utils][INFO] - Epoch 24: train_perplexity=1.0378, train_epoch_loss=0.0371, epoch time 41.891240927390754s
+[2024-11-15 00:48:37][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 00:48:37][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 00:48:37][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 00:48:37][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:48:37][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 25/100, step 49/50 completed (loss: 0.2555789351463318, acc: 0.875): 100%|[34m██████████████████████████████[0m| 50/50 [00:34<00:00,  1.45it/s][0m
+[2024-11-15 00:49:12][slam_llm.utils.train_utils][INFO] - Epoch 25: train_perplexity=1.0443, train_epoch_loss=0.0433, epoch time 35.07065588189289s
+[2024-11-15 00:49:12][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 17 GB
+[2024-11-15 00:49:12][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 18 GB
+[2024-11-15 00:49:12][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 17 GB
+[2024-11-15 00:49:12][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:49:12][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.5116, Acc: 0.8600: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:06<00:00,  1.58it/s][0m
+Training Epoch: 26/100, step 49/50 completed (loss: 0.018784036859869957, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:41<00:00,  1.21it/s][0m
+[2024-11-15 00:49:54][slam_llm.utils.train_utils][INFO] - Epoch 26: train_perplexity=1.0608, train_epoch_loss=0.0591, epoch time 41.861913623753935s
+[2024-11-15 00:49:54][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 00:49:54][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 00:49:54][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 00:49:54][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:49:54][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 27/100, step 49/50 completed (loss: 0.09894710034132004, acc: 1.0): 100%|[34m███████████████████████████████[0m| 50/50 [00:32<00:00,  1.52it/s][0m
+[2024-11-15 00:50:28][slam_llm.utils.train_utils][INFO] - Epoch 27: train_perplexity=1.0833, train_epoch_loss=0.0800, epoch time 33.700975731015205s
+[2024-11-15 00:50:28][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 17 GB
+[2024-11-15 00:50:28][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 18 GB
+[2024-11-15 00:50:28][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 17 GB
+[2024-11-15 00:50:28][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:50:28][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.6111, Acc: 0.8800: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:06<00:00,  1.60it/s][0m
+Training Epoch: 28/100, step 49/50 completed (loss: 0.11092370003461838, acc: 0.9375): 100%|[34m████████████████████████████[0m| 50/50 [00:42<00:00,  1.18it/s][0m
+[2024-11-15 00:51:11][slam_llm.utils.train_utils][INFO] - Epoch 28: train_perplexity=1.0552, train_epoch_loss=0.0537, epoch time 43.01207546889782s
+[2024-11-15 00:51:11][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 00:51:11][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 00:51:11][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 00:51:11][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:51:11][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 29/100, step 49/50 completed (loss: 0.018380193039774895, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:35<00:00,  1.41it/s][0m
+[2024-11-15 00:51:47][slam_llm.utils.train_utils][INFO] - Epoch 29: train_perplexity=1.0878, train_epoch_loss=0.0841, epoch time 35.91073275730014s
+[2024-11-15 00:51:47][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 17 GB
+[2024-11-15 00:51:47][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 18 GB
+[2024-11-15 00:51:47][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 17 GB
+[2024-11-15 00:51:47][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:51:47][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.2475, Acc: 0.9100: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:05<00:00,  1.69it/s][0m
+Training Epoch: 30/100, step 49/50 completed (loss: 0.6247296333312988, acc: 0.9375): 100%|[34m█████████████████████████████[0m| 50/50 [01:28<00:00,  1.77s/it][0m
+[2024-11-15 00:53:15][slam_llm.utils.train_utils][INFO] - Epoch 30: train_perplexity=1.0915, train_epoch_loss=0.0875, epoch time 88.83694712538272s
+[2024-11-15 00:53:15][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 00:53:15][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 00:53:15][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 00:53:15][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:53:15][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 31/100, step 49/50 completed (loss: 0.010917916893959045, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:42<00:00,  1.19it/s][0m
+[2024-11-15 00:53:58][slam_llm.utils.train_utils][INFO] - Epoch 31: train_perplexity=1.0319, train_epoch_loss=0.0314, epoch time 42.51079262094572s
+[2024-11-15 00:53:58][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 17 GB
+[2024-11-15 00:53:58][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 18 GB
+[2024-11-15 00:53:58][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 17 GB
+[2024-11-15 00:53:58][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:53:58][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.4077, Acc: 0.9000: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:06<00:00,  1.57it/s][0m
+Training Epoch: 32/100, step 49/50 completed (loss: 0.0076508489437401295, acc: 1.0): 100%|[34m█████████████████████████████[0m| 50/50 [00:41<00:00,  1.20it/s][0m
+[2024-11-15 00:54:40][slam_llm.utils.train_utils][INFO] - Epoch 32: train_perplexity=1.0285, train_epoch_loss=0.0281, epoch time 42.321186567191035s
+[2024-11-15 00:54:40][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 00:54:40][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 00:54:40][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 00:54:40][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:54:40][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 33/100, step 49/50 completed (loss: 0.009567155502736568, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:36<00:00,  1.35it/s][0m
+[2024-11-15 00:55:18][slam_llm.utils.train_utils][INFO] - Epoch 33: train_perplexity=1.0521, train_epoch_loss=0.0507, epoch time 37.66479485714808s
+[2024-11-15 00:55:18][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 18 GB
+[2024-11-15 00:55:18][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 18 GB
+[2024-11-15 00:55:18][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 18 GB
+[2024-11-15 00:55:18][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:55:18][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.5557, Acc: 0.8800: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:05<00:00,  1.67it/s][0m
+Training Epoch: 34/100, step 49/50 completed (loss: 0.010011041536927223, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:43<00:00,  1.15it/s][0m
+[2024-11-15 00:56:02][slam_llm.utils.train_utils][INFO] - Epoch 34: train_perplexity=1.0348, train_epoch_loss=0.0342, epoch time 44.02401883620769s
+[2024-11-15 00:56:02][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 00:56:02][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 00:56:02][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 00:56:02][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:56:02][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 35/100, step 49/50 completed (loss: 0.038132935762405396, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:41<00:00,  1.22it/s][0m
+[2024-11-15 00:56:44][slam_llm.utils.train_utils][INFO] - Epoch 35: train_perplexity=1.0330, train_epoch_loss=0.0325, epoch time 41.67318670870736s
+[2024-11-15 00:56:44][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 19 GB
+[2024-11-15 00:56:44][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 20 GB
+[2024-11-15 00:56:44][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 19 GB
+[2024-11-15 00:56:44][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:56:44][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.2986, Acc: 0.9100: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:05<00:00,  1.74it/s][0m
+Training Epoch: 36/100, step 49/50 completed (loss: 0.007641407661139965, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:44<00:00,  1.12it/s][0m
+[2024-11-15 00:57:29][slam_llm.utils.train_utils][INFO] - Epoch 36: train_perplexity=1.0333, train_epoch_loss=0.0327, epoch time 45.28686846699566s
+[2024-11-15 00:57:29][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 00:57:29][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 00:57:29][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 00:57:29][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:57:29][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 37/100, step 49/50 completed (loss: 0.12401838600635529, acc: 0.9375): 100%|[34m████████████████████████████[0m| 50/50 [00:37<00:00,  1.35it/s][0m
+[2024-11-15 00:58:07][slam_llm.utils.train_utils][INFO] - Epoch 37: train_perplexity=1.0371, train_epoch_loss=0.0364, epoch time 37.951515790075064s
+[2024-11-15 00:58:07][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 17 GB
+[2024-11-15 00:58:07][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 18 GB
+[2024-11-15 00:58:07][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 17 GB
+[2024-11-15 00:58:07][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:58:07][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.1978, Acc: 0.9400: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:05<00:00,  1.76it/s][0m
+Training Epoch: 38/100, step 49/50 completed (loss: 0.009607364423573017, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:43<00:00,  1.15it/s][0m
+[2024-11-15 00:58:51][slam_llm.utils.train_utils][INFO] - Epoch 38: train_perplexity=1.0433, train_epoch_loss=0.0424, epoch time 43.743653912097216s
+[2024-11-15 00:58:51][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 00:58:51][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 00:58:51][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 00:58:51][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:58:51][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 39/100, step 49/50 completed (loss: 0.08088217675685883, acc: 0.9375): 100%|[34m████████████████████████████[0m| 50/50 [00:35<00:00,  1.40it/s][0m
+[2024-11-15 00:59:27][slam_llm.utils.train_utils][INFO] - Epoch 39: train_perplexity=1.0412, train_epoch_loss=0.0403, epoch time 36.33331709029153s
+[2024-11-15 00:59:27][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 17 GB
+[2024-11-15 00:59:27][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 18 GB
+[2024-11-15 00:59:27][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 17 GB
+[2024-11-15 00:59:27][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 00:59:27][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.3297, Acc: 0.9100: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:06<00:00,  1.55it/s][0m
+Training Epoch: 40/100, step 49/50 completed (loss: 0.008859272114932537, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:44<00:00,  1.13it/s][0m
+[2024-11-15 01:00:12][slam_llm.utils.train_utils][INFO] - Epoch 40: train_perplexity=1.0219, train_epoch_loss=0.0217, epoch time 45.31176587520167s
+[2024-11-15 01:00:12][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 01:00:12][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 01:00:12][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 01:00:12][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:00:12][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 41/100, step 49/50 completed (loss: 0.006470613181591034, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:35<00:00,  1.41it/s][0m
+[2024-11-15 01:00:49][slam_llm.utils.train_utils][INFO] - Epoch 41: train_perplexity=1.0723, train_epoch_loss=0.0698, epoch time 36.296563239302486s
+[2024-11-15 01:00:49][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 17 GB
+[2024-11-15 01:00:49][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 18 GB
+[2024-11-15 01:00:49][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 17 GB
+[2024-11-15 01:00:49][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:00:49][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.3862, Acc: 0.8800: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:05<00:00,  1.81it/s][0m
+Training Epoch: 42/100, step 49/50 completed (loss: 0.03231814131140709, acc: 1.0): 100%|[34m███████████████████████████████[0m| 50/50 [00:40<00:00,  1.23it/s][0m
+[2024-11-15 01:01:30][slam_llm.utils.train_utils][INFO] - Epoch 42: train_perplexity=1.0230, train_epoch_loss=0.0227, epoch time 41.70717083988711s
+[2024-11-15 01:01:30][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 01:01:30][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 01:01:30][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 01:01:30][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:01:30][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 43/100, step 49/50 completed (loss: 0.008982046507298946, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:35<00:00,  1.42it/s][0m
+[2024-11-15 01:02:06][slam_llm.utils.train_utils][INFO] - Epoch 43: train_perplexity=1.0209, train_epoch_loss=0.0207, epoch time 36.03970708698034s
+[2024-11-15 01:02:06][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 18 GB
+[2024-11-15 01:02:06][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 19 GB
+[2024-11-15 01:02:06][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 18 GB
+[2024-11-15 01:02:06][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:02:06][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.2297, Acc: 0.9400: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:06<00:00,  1.58it/s][0m
+Training Epoch: 44/100, step 49/50 completed (loss: 0.01191135123372078, acc: 1.0): 100%|[34m███████████████████████████████[0m| 50/50 [00:40<00:00,  1.23it/s][0m
+[2024-11-15 01:02:48][slam_llm.utils.train_utils][INFO] - Epoch 44: train_perplexity=1.0184, train_epoch_loss=0.0183, epoch time 41.205461046658456s
+[2024-11-15 01:02:48][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 01:02:48][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 01:02:48][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 01:02:48][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:02:48][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 45/100, step 49/50 completed (loss: 0.004654964432120323, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:37<00:00,  1.35it/s][0m
+[2024-11-15 01:03:25][slam_llm.utils.train_utils][INFO] - Epoch 45: train_perplexity=1.0110, train_epoch_loss=0.0109, epoch time 37.70173382293433s
+[2024-11-15 01:03:25][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 17 GB
+[2024-11-15 01:03:25][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 18 GB
+[2024-11-15 01:03:25][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 17 GB
+[2024-11-15 01:03:25][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:03:25][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.3352, Acc: 0.9200: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:05<00:00,  1.67it/s][0m
+Training Epoch: 46/100, step 49/50 completed (loss: 0.0036223905626684427, acc: 1.0): 100%|[34m█████████████████████████████[0m| 50/50 [00:42<00:00,  1.18it/s][0m
+[2024-11-15 01:04:08][slam_llm.utils.train_utils][INFO] - Epoch 46: train_perplexity=1.0084, train_epoch_loss=0.0083, epoch time 42.85411804821342s
+[2024-11-15 01:04:08][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 01:04:08][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 01:04:08][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 01:04:08][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:04:08][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 47/100, step 49/50 completed (loss: 0.003232784103602171, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:35<00:00,  1.40it/s][0m
+[2024-11-15 01:04:44][slam_llm.utils.train_utils][INFO] - Epoch 47: train_perplexity=1.0119, train_epoch_loss=0.0118, epoch time 36.31493330001831s
+[2024-11-15 01:04:44][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 18 GB
+[2024-11-15 01:04:44][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 19 GB
+[2024-11-15 01:04:44][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 18 GB
+[2024-11-15 01:04:44][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:04:44][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.3089, Acc: 0.9500: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:05<00:00,  1.69it/s][0m
+Training Epoch: 48/100, step 49/50 completed (loss: 0.002518509281799197, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:40<00:00,  1.23it/s][0m
+[2024-11-15 01:05:25][slam_llm.utils.train_utils][INFO] - llm is frozen, we are about to save other parts.
+[2024-11-15 01:05:25][slam_llm.utils.checkpoint_handler][INFO] - --> saving model ...
+[2024-11-15 01:05:25][slam_llm.utils.checkpoint_handler][INFO] - encoder saved at /home/liu.ten/demo/tmp/audio_only-TinyLlama-1.1B-librispeech-linear-steplrwarmupkeep1e-4-wavlm-large-20241115/hate_speech_detection_epoch_48_step_50/model.pt
+[2024-11-15 01:05:25][slam_llm.utils.train_utils][INFO] - New best accuracy on epoch 48: 0.9500
+[2024-11-15 01:05:26][slam_llm.utils.train_utils][INFO] - Epoch 48: train_perplexity=1.0070, train_epoch_loss=0.0070, epoch time 41.255153400823474s
+[2024-11-15 01:05:26][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 01:05:26][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 01:05:26][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 01:05:26][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:05:26][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 49/100, step 49/50 completed (loss: 0.002857677638530731, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:35<00:00,  1.41it/s][0m
+[2024-11-15 01:06:02][slam_llm.utils.train_utils][INFO] - Epoch 49: train_perplexity=1.0038, train_epoch_loss=0.0038, epoch time 36.25020014913753s
+[2024-11-15 01:06:02][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 18 GB
+[2024-11-15 01:06:02][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 18 GB
+[2024-11-15 01:06:02][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 18 GB
+[2024-11-15 01:06:02][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:06:02][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.4513, Acc: 0.9200: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:06<00:00,  1.50it/s][0m
+Training Epoch: 50/100, step 49/50 completed (loss: 0.009171773679554462, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:41<00:00,  1.21it/s][0m
+[2024-11-15 01:06:44][slam_llm.utils.train_utils][INFO] - Epoch 50: train_perplexity=1.0045, train_epoch_loss=0.0045, epoch time 41.91495125601068s
+[2024-11-15 01:06:44][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 01:06:44][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 01:06:44][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 01:06:44][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:06:44][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 51/100, step 49/50 completed (loss: 0.026600472629070282, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:36<00:00,  1.36it/s][0m
+[2024-11-15 01:07:21][slam_llm.utils.train_utils][INFO] - Epoch 51: train_perplexity=1.0128, train_epoch_loss=0.0127, epoch time 37.51811336679384s
+[2024-11-15 01:07:21][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 19 GB
+[2024-11-15 01:07:21][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 20 GB
+[2024-11-15 01:07:21][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 19 GB
+[2024-11-15 01:07:21][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:07:21][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.2842, Acc: 0.9200: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:06<00:00,  1.55it/s][0m
+Training Epoch: 52/100, step 49/50 completed (loss: 0.07176347076892853, acc: 0.9375): 100%|[34m████████████████████████████[0m| 50/50 [00:42<00:00,  1.19it/s][0m
+[2024-11-15 01:08:04][slam_llm.utils.train_utils][INFO] - Epoch 52: train_perplexity=1.0227, train_epoch_loss=0.0225, epoch time 42.66397004015744s
+[2024-11-15 01:08:04][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 01:08:04][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 01:08:04][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 01:08:04][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:08:04][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 53/100, step 49/50 completed (loss: 0.014747650362551212, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:35<00:00,  1.40it/s][0m
+[2024-11-15 01:08:40][slam_llm.utils.train_utils][INFO] - Epoch 53: train_perplexity=1.0434, train_epoch_loss=0.0425, epoch time 36.471076493151486s
+[2024-11-15 01:08:40][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 17 GB
+[2024-11-15 01:08:40][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 18 GB
+[2024-11-15 01:08:40][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 17 GB
+[2024-11-15 01:08:40][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:08:40][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.2333, Acc: 0.9200: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:06<00:00,  1.59it/s][0m
+Training Epoch: 54/100, step 49/50 completed (loss: 0.013734451495110989, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:44<00:00,  1.13it/s][0m
+[2024-11-15 01:09:25][slam_llm.utils.train_utils][INFO] - Epoch 54: train_perplexity=1.0594, train_epoch_loss=0.0577, epoch time 44.39767538011074s
+[2024-11-15 01:09:25][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 01:09:25][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 01:09:25][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 01:09:25][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:09:25][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 55/100, step 49/50 completed (loss: 0.10429789870977402, acc: 0.9375): 100%|[34m████████████████████████████[0m| 50/50 [00:33<00:00,  1.49it/s][0m
+[2024-11-15 01:09:59][slam_llm.utils.train_utils][INFO] - Epoch 55: train_perplexity=1.0626, train_epoch_loss=0.0607, epoch time 34.252713767811656s
+[2024-11-15 01:09:59][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 17 GB
+[2024-11-15 01:09:59][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 18 GB
+[2024-11-15 01:09:59][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 17 GB
+[2024-11-15 01:09:59][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:09:59][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.2695, Acc: 0.9200: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:05<00:00,  1.74it/s][0m
+Training Epoch: 56/100, step 49/50 completed (loss: 0.026893461123108864, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:40<00:00,  1.23it/s][0m
+[2024-11-15 01:10:41][slam_llm.utils.train_utils][INFO] - Epoch 56: train_perplexity=1.0692, train_epoch_loss=0.0669, epoch time 41.3632479920052s
+[2024-11-15 01:10:41][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 01:10:41][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 01:10:41][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 01:10:41][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:10:41][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 57/100, step 49/50 completed (loss: 0.011328564956784248, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:35<00:00,  1.42it/s][0m
+[2024-11-15 01:11:16][slam_llm.utils.train_utils][INFO] - Epoch 57: train_perplexity=1.0555, train_epoch_loss=0.0540, epoch time 35.51291024079546s
+[2024-11-15 01:11:16][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 17 GB
+[2024-11-15 01:11:16][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 18 GB
+[2024-11-15 01:11:16][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 17 GB
+[2024-11-15 01:11:16][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:11:16][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.2915, Acc: 0.9000: 100%|[32m███████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:06<00:00,  1.56it/s][0m
+Training Epoch: 58/100, step 49/50 completed (loss: 0.005097310524433851, acc: 1.0): 100%|[34m██████████████████████████████[0m| 50/50 [00:41<00:00,  1.21it/s][0m
+[2024-11-15 01:11:58][slam_llm.utils.train_utils][INFO] - Epoch 58: train_perplexity=1.0239, train_epoch_loss=0.0237, epoch time 41.81885660206899s
+[2024-11-15 01:11:58][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 01:11:58][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 01:11:58][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 01:11:58][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:11:58][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 59/100, step 49/50 completed (loss: 0.06686930358409882, acc: 0.9375): 100%|[34m████████████████████████████[0m| 50/50 [00:34<00:00,  1.44it/s][0m
+[2024-11-15 01:12:33][slam_llm.utils.train_utils][INFO] - Epoch 59: train_perplexity=1.0222, train_epoch_loss=0.0219, epoch time 35.17126457300037s
+[2024-11-15 01:12:33][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 18 GB
+[2024-11-15 01:12:33][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 19 GB
+[2024-11-15 01:12:33][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 18 GB
+[2024-11-15 01:12:33][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:12:33][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.2995, Acc: 0.9000: 100%|[32m█████████████████████████████████[0m| 10/10 [00:05<00:00,  1.74it/s][0m                                          
+Training Epoch: 60/100, step 49/50 completed (loss: 0.00568300811573863, acc: 1.0): 100%|[34m████████████████████████████████████[0m| 50/50 [00:40<00:00,  1.23it/s][0m
+[2024-11-15 01:13:14][slam_llm.utils.train_utils][INFO] - Epoch 60: train_perplexity=1.0209, train_epoch_loss=0.0207, epoch time 41.132519353181124s
+[2024-11-15 01:13:14][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 01:13:14][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 01:13:14][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 01:13:14][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:13:14][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 61/100, step 49/50 completed (loss: 0.00494197616353631, acc: 1.0): 100%|[34m███████████████████[0m| 50/50 [00:37<00:00,  1.34it/s][0m                 
+[2024-11-15 01:13:52][slam_llm.utils.train_utils][INFO] - Epoch 61: train_perplexity=1.0173, train_epoch_loss=0.0172, epoch time 37.91441034525633s
+[2024-11-15 01:13:52][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 17 GB
+[2024-11-15 01:13:52][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 18 GB
+[2024-11-15 01:13:52][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 17 GB
+[2024-11-15 01:13:52][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:13:52][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.2254, Acc: 0.9400: 100%|[32m███████████████████████████████████████████████████████████████[0m| 10/10 [00:07<00:00,  1.31it/s][0m
+Training Epoch: 62/100, step 49/50 completed (loss: 0.014232511632144451, acc: 1.0): 100%|[34m██████████████████[0m| 50/50 [00:48<00:00,  1.04it/s][0m
+[2024-11-15 01:14:41][slam_llm.utils.train_utils][INFO] - Epoch 62: train_perplexity=1.0167, train_epoch_loss=0.0165, epoch time 48.675570249091834s
+[2024-11-15 01:14:41][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 01:14:41][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 01:14:41][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 01:14:41][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:14:41][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 63/100, step 49/50 completed (loss: 0.0040169632993638515, acc: 1.0): 100%|[34m█████████████████[0m| 50/50 [00:49<00:00,  1.00it/s][0m
+[2024-11-15 01:15:31][slam_llm.utils.train_utils][INFO] - Epoch 63: train_perplexity=1.0157, train_epoch_loss=0.0155, epoch time 50.51776129566133s
+[2024-11-15 01:15:31][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 19 GB
+[2024-11-15 01:15:31][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 19 GB
+[2024-11-15 01:15:31][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 19 GB
+[2024-11-15 01:15:31][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:15:31][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.2522, Acc: 0.9300: 100%|[32m███████████████████████████████████████████████████████████████[0m| 10/10 [00:07<00:00,  1.38it/s][0m
+Training Epoch: 64/100, step 49/50 completed (loss: 0.005953407846391201, acc: 1.0): 100%|[34m██████████████████[0m| 50/50 [00:57<00:00,  1.15s/it][0m
+[2024-11-15 01:16:29][slam_llm.utils.train_utils][INFO] - Epoch 64: train_perplexity=1.0338, train_epoch_loss=0.0332, epoch time 58.13009378500283s
+[2024-11-15 01:16:29][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 01:16:29][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 01:16:29][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 01:16:29][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:16:29][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 65/100, step 49/50 completed (loss: 0.01055966503918171, acc: 1.0): 100%|[34m███████████████████[0m| 50/50 [00:39<00:00,  1.27it/s][0m
+[2024-11-15 01:17:09][slam_llm.utils.train_utils][INFO] - Epoch 65: train_perplexity=1.0226, train_epoch_loss=0.0224, epoch time 39.903046479448676s
+[2024-11-15 01:17:09][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 17 GB
+[2024-11-15 01:17:09][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 18 GB
+[2024-11-15 01:17:09][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 17 GB
+[2024-11-15 01:17:09][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:17:09][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.2232, Acc: 0.9100: 100%|[32m███████████████████████████████████████████████████████████████[0m| 10/10 [00:06<00:00,  1.54it/s][0m
+Training Epoch: 66/100, step 49/50 completed (loss: 0.013936923816800117, acc: 1.0): 100%|[34m██████████████████[0m| 50/50 [00:43<00:00,  1.16it/s][0m
+[2024-11-15 01:17:53][slam_llm.utils.train_utils][INFO] - Epoch 66: train_perplexity=1.0183, train_epoch_loss=0.0181, epoch time 43.63665567571297s
+[2024-11-15 01:17:53][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 01:17:53][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 01:17:53][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 01:17:53][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:17:53][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 67/100, step 49/50 completed (loss: 0.0031849932856857777, acc: 1.0): 100%|[34m█████████████████[0m| 50/50 [00:35<00:00,  1.41it/s][0m
+[2024-11-15 01:18:29][slam_llm.utils.train_utils][INFO] - Epoch 67: train_perplexity=1.0119, train_epoch_loss=0.0118, epoch time 36.203739599790424s
+[2024-11-15 01:18:29][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 18 GB
+[2024-11-15 01:18:29][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 19 GB
+[2024-11-15 01:18:29][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 18 GB
+[2024-11-15 01:18:29][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:18:29][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.2600, Acc: 0.9300: 100%|[32m███████████████████████████████████████████████████████████████[0m| 10/10 [00:06<00:00,  1.57it/s][0m
+Training Epoch: 68/100, step 49/50 completed (loss: 0.02758064679801464, acc: 1.0): 100%|[34m███████████████████[0m| 50/50 [00:40<00:00,  1.23it/s][0m
+[2024-11-15 01:19:10][slam_llm.utils.train_utils][INFO] - Epoch 68: train_perplexity=1.0329, train_epoch_loss=0.0323, epoch time 41.00788584398106s
+[2024-11-15 01:19:10][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 01:19:10][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 01:19:10][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 01:19:10][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:19:10][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 69/100, step 49/50 completed (loss: 0.19058547914028168, acc: 0.875): 100%|[34m█████████████████[0m| 50/50 [00:36<00:00,  1.38it/s][0m
+[2024-11-15 01:19:47][slam_llm.utils.train_utils][INFO] - Epoch 69: train_perplexity=1.0205, train_epoch_loss=0.0203, epoch time 37.04725204408169s
+[2024-11-15 01:19:47][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 17 GB
+[2024-11-15 01:19:47][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 18 GB
+[2024-11-15 01:19:47][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 17 GB
+[2024-11-15 01:19:47][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:19:47][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Step: 10/10, Loss: 0.2997, Acc: 0.9000: 100%|[32m███████████████████████████████████████████████████████████████[0m| 10/10 [00:05<00:00,  1.81it/s][0m
+Training Epoch: 70/100, step 49/50 completed (loss: 0.003519776975736022, acc: 1.0): 100%|[34m██████████████████[0m| 50/50 [00:42<00:00,  1.19it/s][0m
+[2024-11-15 01:20:30][slam_llm.utils.train_utils][INFO] - Epoch 70: train_perplexity=1.0306, train_epoch_loss=0.0301, epoch time 42.40503711858764s
+[2024-11-15 01:20:30][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-15 01:20:30][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-15 01:20:30][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-15 01:20:30][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:20:30][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 71/100, step 49/50 completed (loss: 0.002477900357916951, acc: 1.0): 100%|[34m██████████████████[0m| 50/50 [00:36<00:00,  1.38it/s][0m
+[2024-11-15 01:21:06][slam_llm.utils.train_utils][INFO] - Epoch 71: train_perplexity=1.0172, train_epoch_loss=0.0170, epoch time 36.61322363372892s
+[2024-11-15 01:21:06][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 17 GB
+[2024-11-15 01:21:06][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 18 GB
+[2024-11-15 01:21:06][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 17 GB
+[2024-11-15 01:21:06][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-15 01:21:06][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 6 GB
+Training Epoch: 72/100, step 49/50 completed (loss: 0.0023856195621192455, acc: 1.0): 100%|[34m█████████████████[0m| 50/50 [00:36<00:00,  1.82it/s][0mTraceback (most recent call last):
+  File "/home/liu.ten/demo/SLAM-LLM/examples/asr_librispeech/finetune_asr.py", line 49, in <module>                       [0m| 0/10 [00:00<?, ?it/s][0m
+    main_hydra()
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+           ^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+            ^^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+          ^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/demo/SLAM-LLM/examples/asr_librispeech/finetune_asr.py", line 45, in main_hydra
+    train(kwargs)
+  File "/home/liu.ten/demo/SLAM-LLM/src/slam_llm/pipeline/finetune.py", line 299, in main
+    results = train(
+              ^^^^^^
+  File "/home/liu.ten/demo/SLAM-LLM/src/slam_llm/utils/train_utils.py", line 171, in train
+    eval_ppl, eval_epoch_loss, *rest = evaluation(model, train_config, eval_dataloader, local_rank, tokenizer)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/demo/SLAM-LLM/src/slam_llm/utils/train_utils.py", line 416, in evaluation
+    for step, batch in enumerate(eval_dataloader):
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 701, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 1448, in _next_data
+    idx, data = self._get_data()
+                ^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 1402, in _get_data
+    success, data = self._try_get_data()
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 1243, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/queue.py", line 180, in get
+    self.not_empty.wait(remaining)
+  File "/home/liu.ten/miniconda3/lib/python3.12/threading.py", line 359, in wait
+    gotit = waiter.acquire(True, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/liu.ten/demo/SLAM-LLM/examples/asr_librispeech/finetune_asr.py", line 49, in <module>
+[rank0]:     main_hydra()
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/main.py", line 94, in decorated_main
+[rank0]:     _run_hydra(
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+[rank0]:     _run_app(
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+[rank0]:     run_and_report(
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+[rank0]:     return func()
+[rank0]:            ^^^^^^
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+[rank0]:     lambda: hydra.run(
+[rank0]:             ^^^^^^^^^^
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/_internal/hydra.py", line 119, in run
+[rank0]:     ret = run_job(
+[rank0]:           ^^^^^^^^
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/core/utils.py", line 186, in run_job
+[rank0]:     ret.return_value = task_function(task_cfg)
+[rank0]:                        ^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/liu.ten/demo/SLAM-LLM/examples/asr_librispeech/finetune_asr.py", line 45, in main_hydra
+[rank0]:     train(kwargs)
+[rank0]:   File "/home/liu.ten/demo/SLAM-LLM/src/slam_llm/pipeline/finetune.py", line 299, in main
+[rank0]:     results = train(
+[rank0]:               ^^^^^^
+[rank0]:   File "/home/liu.ten/demo/SLAM-LLM/src/slam_llm/utils/train_utils.py", line 171, in train
+[rank0]:     eval_ppl, eval_epoch_loss, *rest = evaluation(model, train_config, eval_dataloader, local_rank, tokenizer)
+[rank0]:                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/liu.ten/demo/SLAM-LLM/src/slam_llm/utils/train_utils.py", line 416, in evaluation
+[rank0]:     for step, batch in enumerate(eval_dataloader):
+[rank0]:                        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 701, in __next__
+[rank0]:     data = self._next_data()
+[rank0]:            ^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 1448, in _next_data
+[rank0]:     idx, data = self._get_data()
+[rank0]:                 ^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 1402, in _get_data
+[rank0]:     success, data = self._try_get_data()
+[rank0]:                     ^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 1243, in _try_get_data
+[rank0]:     data = self._data_queue.get(timeout=timeout)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/queue.py", line 180, in get
+[rank0]:     self.not_empty.wait(remaining)
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/threading.py", line 359, in wait
+[rank0]:     gotit = waiter.acquire(True, timeout)
+[rank0]:             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: KeyboardInterrupt

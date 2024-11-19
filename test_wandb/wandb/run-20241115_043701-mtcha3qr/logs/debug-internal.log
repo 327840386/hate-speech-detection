@@ -1,0 +1,18 @@
+{"time":"2024-11-15T04:37:01.90096788-05:00","level":"INFO","msg":"using version","core version":"0.18.2"}
+{"time":"2024-11-15T04:37:01.900980954-05:00","level":"INFO","msg":"created symlink","path":"/home/liu.ten/demo/test_wandb/wandb/run-20241115_043701-mtcha3qr/logs/debug-core.log"}
+{"time":"2024-11-15T04:37:01.904827719-05:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-11-15T04:37:01.911031235-05:00","level":"INFO","msg":"created new stream","id":"mtcha3qr"}
+{"time":"2024-11-15T04:37:01.911054779-05:00","level":"INFO","msg":"stream: started","id":"mtcha3qr"}
+{"time":"2024-11-15T04:37:01.911079736-05:00","level":"INFO","msg":"handler: started","stream_id":{"value":"mtcha3qr"}}
+{"time":"2024-11-15T04:37:01.911135941-05:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"mtcha3qr"}}
+{"time":"2024-11-15T04:37:01.913773608-05:00","level":"INFO","msg":"sender: started","stream_id":{"value":"mtcha3qr"}}
+{"time":"2024-11-15T04:37:02.111774595-05:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-11-15T04:37:02.117101706-05:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-15T04:37:11.043785385-05:00","level":"INFO","msg":"stream: closing","id":"mtcha3qr"}
+{"time":"2024-11-15T04:37:11.043908996-05:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-15T04:37:11.046912009-05:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-15T04:37:11.423863239-05:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-15T04:37:11.537020961-05:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"mtcha3qr"}}
+{"time":"2024-11-15T04:37:11.537079591-05:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"mtcha3qr"}}
+{"time":"2024-11-15T04:37:11.537069642-05:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"mtcha3qr"}}
+{"time":"2024-11-15T04:37:11.539535207-05:00","level":"INFO","msg":"stream: closed","id":"mtcha3qr"}

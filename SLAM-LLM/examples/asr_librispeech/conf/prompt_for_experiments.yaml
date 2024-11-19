@@ -1,0 +1,14 @@
+dataset_config:
+
+# prompt for experiment 1
+   prompt: "Analyze the tone, pitch, and speech patterns in the audio. Pay attention to aggressive, hostile, or discriminatory tones, along with any hateful or harmful word choices in the transcription (e.g., racial slurs or insults). If hate speech is detected in either the audio or transcription, respond 'Yes'; otherwise, respond 'No'. Ensure the response is strictly 'Yes' or 'No' without additional content."
+
+
+   # prompt for experiment 2
+    prompt: "Evaluate both the audio and transcription. Consider tone, speech patterns, and word choices such as hateful, harmful, or aggressive language, including explicit slurs or discriminatory terms. If hate speech is detected in either, respond 'Yes'; otherwise, respond 'No'. Ensure the response is strictly 'Yes' or 'No' with no additional content."
+  
+
+  # prompt for experiment 3
+  prompt: "Analyze word choices like 'hateful,' 'harmful,' 'aggressive,' or explicit slurs in the audio and transcription. Pay attention to discriminatory terms (e.g., racial slurs or hate-related language) and assess the overall tone for hostility or intent to harm. If hate speech is detected in either the audio or transcription, respond 'Yes'; otherwise, respond 'No'. Provide only 'Yes' or 'No' without extra content."
+
+   

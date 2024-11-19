@@ -1,0 +1,3 @@
+dataset_config:
+   # prompt for experiment 1
+   prompt: "Analyze the tone, pitch, and speech patterns in the audio. Pay attention to aggressive, hostile, or discriminatory tones, along with any hateful or harmful word choices in the transcription (e.g., racial slurs or insults). If hate speech is detected in either the audio or transcription, respond 'Yes'; otherwise, respond 'No'. Ensure the response is strictly 'Yes' or 'No' without additional content."

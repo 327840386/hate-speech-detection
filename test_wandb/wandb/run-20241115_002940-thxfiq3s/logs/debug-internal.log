@@ -1,0 +1,18 @@
+{"time":"2024-11-15T00:29:41.15676577-05:00","level":"INFO","msg":"using version","core version":"0.18.2"}
+{"time":"2024-11-15T00:29:41.156785667-05:00","level":"INFO","msg":"created symlink","path":"/home/liu.ten/demo/test_wandb/wandb/run-20241115_002940-thxfiq3s/logs/debug-core.log"}
+{"time":"2024-11-15T00:29:41.158700289-05:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-11-15T00:29:41.19608136-05:00","level":"INFO","msg":"created new stream","id":"thxfiq3s"}
+{"time":"2024-11-15T00:29:41.196119081-05:00","level":"INFO","msg":"stream: started","id":"thxfiq3s"}
+{"time":"2024-11-15T00:29:41.196156421-05:00","level":"INFO","msg":"handler: started","stream_id":{"value":"thxfiq3s"}}
+{"time":"2024-11-15T00:29:41.19618261-05:00","level":"INFO","msg":"sender: started","stream_id":{"value":"thxfiq3s"}}
+{"time":"2024-11-15T00:29:41.196233846-05:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"thxfiq3s"}}
+{"time":"2024-11-15T00:29:41.798191882-05:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-11-15T00:29:41.808048812-05:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-15T00:31:57.50545984-05:00","level":"INFO","msg":"stream: closing","id":"thxfiq3s"}
+{"time":"2024-11-15T00:31:57.505575166-05:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-15T00:31:57.516266379-05:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-15T00:31:57.867126435-05:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-15T00:31:57.978533237-05:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"thxfiq3s"}}
+{"time":"2024-11-15T00:31:57.978574815-05:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"thxfiq3s"}}
+{"time":"2024-11-15T00:31:57.978585856-05:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"thxfiq3s"}}
+{"time":"2024-11-15T00:31:57.985847185-05:00","level":"INFO","msg":"stream: closed","id":"thxfiq3s"}

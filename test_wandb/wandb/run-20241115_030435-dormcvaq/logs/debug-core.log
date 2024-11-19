@@ -1,0 +1,12 @@
+{"time":"2024-11-15T03:04:34.873844792-05:00","level":"INFO","msg":"started logging, with flags","port-filename":"/tmp/tmpwjen2n8m/port-6643.txt","pid":6643,"debug":false,"disable-analytics":false}
+{"time":"2024-11-15T03:04:34.873880368-05:00","level":"INFO","msg":"FeatureState","shutdownOnParentExitEnabled":false}
+{"time":"2024-11-15T03:04:34.874625286-05:00","level":"INFO","msg":"server is running","addr":{"IP":"127.0.0.1","Port":34016,"Zone":""}}
+{"time":"2024-11-15T03:04:34.874693353-05:00","level":"INFO","msg":"Will exit if parent process dies.","ppid":6643}
+{"time":"2024-11-15T03:04:35.064694873-05:00","level":"INFO","msg":"created new connection","id":"127.0.0.1:50460"}
+{"time":"2024-11-15T03:04:35.320948601-05:00","level":"INFO","msg":"connection init received","streamId":"dormcvaq","id":"127.0.0.1:50460"}
+{"time":"2024-11-15T03:04:35.346197098-05:00","level":"INFO","msg":"connection init completed","streamId":"dormcvaq","id":"127.0.0.1:50460"}
+{"time":"2024-11-15T03:09:13.199319808-05:00","level":"INFO","msg":"connection: teardown","id":"127.0.0.1:50460"}
+{"time":"2024-11-15T03:09:13.200029749-05:00","level":"INFO","msg":"server is shutting down"}
+{"time":"2024-11-15T03:09:13.200054706-05:00","level":"INFO","msg":"closed connection","id":"127.0.0.1:50460"}
+{"time":"2024-11-15T03:09:13.667743904-05:00","level":"INFO","msg":"connection closed","id":"127.0.0.1:50460"}
+{"time":"2024-11-15T03:09:13.667764342-05:00","level":"INFO","msg":"server is closed"}

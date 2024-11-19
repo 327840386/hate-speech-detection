@@ -1,0 +1,18 @@
+{"time":"2024-11-14T23:44:12.533405231-05:00","level":"INFO","msg":"using version","core version":"0.18.2"}
+{"time":"2024-11-14T23:44:12.533424037-05:00","level":"INFO","msg":"created symlink","path":"/home/liu.ten/demo/test_wandb/wandb/run-20241114_234412-g0b2ojal/logs/debug-core.log"}
+{"time":"2024-11-14T23:44:12.53458494-05:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-11-14T23:44:12.542928212-05:00","level":"INFO","msg":"created new stream","id":"g0b2ojal"}
+{"time":"2024-11-14T23:44:12.542954081-05:00","level":"INFO","msg":"stream: started","id":"g0b2ojal"}
+{"time":"2024-11-14T23:44:12.542979268-05:00","level":"INFO","msg":"handler: started","stream_id":{"value":"g0b2ojal"}}
+{"time":"2024-11-14T23:44:12.543046806-05:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"g0b2ojal"}}
+{"time":"2024-11-14T23:44:12.543083145-05:00","level":"INFO","msg":"sender: started","stream_id":{"value":"g0b2ojal"}}
+{"time":"2024-11-14T23:44:12.72085603-05:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-11-14T23:44:12.725047318-05:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-15T00:26:53.868149303-05:00","level":"INFO","msg":"stream: closing","id":"g0b2ojal"}
+{"time":"2024-11-15T00:26:53.8682746-05:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-15T00:26:53.875298952-05:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-15T00:26:54.299302379-05:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-15T00:26:54.408741086-05:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"g0b2ojal"}}
+{"time":"2024-11-15T00:26:54.408797573-05:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"g0b2ojal"}}
+{"time":"2024-11-15T00:26:54.408813623-05:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"g0b2ojal"}}
+{"time":"2024-11-15T00:26:54.422403941-05:00","level":"INFO","msg":"stream: closed","id":"g0b2ojal"}

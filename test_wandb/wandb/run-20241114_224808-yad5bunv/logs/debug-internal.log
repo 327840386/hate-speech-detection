@@ -1,0 +1,18 @@
+{"time":"2024-11-14T22:48:08.906337449-05:00","level":"INFO","msg":"using version","core version":"0.18.2"}
+{"time":"2024-11-14T22:48:08.906356946-05:00","level":"INFO","msg":"created symlink","path":"/home/liu.ten/demo/test_wandb/wandb/run-20241114_224808-yad5bunv/logs/debug-core.log"}
+{"time":"2024-11-14T22:48:08.907437417-05:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-11-14T22:48:08.921187599-05:00","level":"INFO","msg":"created new stream","id":"yad5bunv"}
+{"time":"2024-11-14T22:48:08.921213237-05:00","level":"INFO","msg":"stream: started","id":"yad5bunv"}
+{"time":"2024-11-14T22:48:08.92122558-05:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"yad5bunv"}}
+{"time":"2024-11-14T22:48:08.921235419-05:00","level":"INFO","msg":"sender: started","stream_id":{"value":"yad5bunv"}}
+{"time":"2024-11-14T22:48:08.92125742-05:00","level":"INFO","msg":"handler: started","stream_id":{"value":"yad5bunv"}}
+{"time":"2024-11-14T22:48:09.1180118-05:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-11-14T22:48:09.135351061-05:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-14T23:23:30.997554043-05:00","level":"INFO","msg":"stream: closing","id":"yad5bunv"}
+{"time":"2024-11-14T23:23:30.997640767-05:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-14T23:23:31.002983611-05:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-14T23:23:32.224898305-05:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-14T23:23:32.334234372-05:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"yad5bunv"}}
+{"time":"2024-11-14T23:23:32.334268426-05:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"yad5bunv"}}
+{"time":"2024-11-14T23:23:32.3342967-05:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"yad5bunv"}}
+{"time":"2024-11-14T23:23:32.336124503-05:00","level":"INFO","msg":"stream: closed","id":"yad5bunv"}

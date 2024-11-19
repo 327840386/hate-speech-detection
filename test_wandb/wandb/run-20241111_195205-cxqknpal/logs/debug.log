@@ -1,0 +1,29 @@
+2024-11-11 19:52:05,779 INFO    MainThread:46932 [wandb_setup.py:_flush():79] Current SDK version is 0.18.2
+2024-11-11 19:52:05,779 INFO    MainThread:46932 [wandb_setup.py:_flush():79] Configure stats pid to 46932
+2024-11-11 19:52:05,779 INFO    MainThread:46932 [wandb_setup.py:_flush():79] Loading settings from /home/liu.ten/.config/wandb/settings
+2024-11-11 19:52:05,779 INFO    MainThread:46932 [wandb_setup.py:_flush():79] Loading settings from /home/liu.ten/demo/SLAM-LLM/wandb/settings
+2024-11-11 19:52:05,779 INFO    MainThread:46932 [wandb_setup.py:_flush():79] Loading settings from environment variables: {}
+2024-11-11 19:52:05,779 INFO    MainThread:46932 [wandb_setup.py:_flush():79] Applying setup settings: {'mode': None, '_disable_service': None}
+2024-11-11 19:52:05,779 INFO    MainThread:46932 [wandb_setup.py:_flush():79] Inferring run settings from compute environment: {'program_relpath': 'SLAM-LLM/examples/asr_librispeech/finetune_asr.py', 'program_abspath': '/home/liu.ten/demo/SLAM-LLM/examples/asr_librispeech/finetune_asr.py', 'program': '/home/liu.ten/demo/SLAM-LLM/examples/asr_librispeech/finetune_asr.py'}
+2024-11-11 19:52:05,779 INFO    MainThread:46932 [wandb_setup.py:_flush():79] Applying login settings: {}
+2024-11-11 19:52:05,779 INFO    MainThread:46932 [wandb_init.py:_log_setup():532] Logging user logs to /home/liu.ten/demo/test_wandb/wandb/run-20241111_195205-cxqknpal/logs/debug.log
+2024-11-11 19:52:05,779 INFO    MainThread:46932 [wandb_init.py:_log_setup():533] Logging internal logs to /home/liu.ten/demo/test_wandb/wandb/run-20241111_195205-cxqknpal/logs/debug-internal.log
+2024-11-11 19:52:05,779 INFO    MainThread:46932 [wandb_init.py:init():616] calling init triggers
+2024-11-11 19:52:05,780 INFO    MainThread:46932 [wandb_init.py:init():623] wandb.init called with sweep_config: {}
+config: {'train_config': {'model_name': 'hate_speech_detection', 'enable_ddp': True, 'enable_deepspeed': False, 'enable_fsdp': False, 'low_cpu_fsdp': False, 'run_validation': True, 'batch_size_training': 8, 'batching_strategy': 'custom', 'context_length': 4096, 'gradient_accumulation_steps': 1, 'num_epochs': 50, 'num_workers_dataloader': 2, 'warmup_steps': 1000, 'total_steps': 100000, 'validation_interval': 100, 'lr': 0.0001, 'weight_decay': 0.0, 'gamma': 0.85, 'seed': 42, 'use_fp16': True, 'mixed_precision': True, 'val_batch_size': 5, 'enable_gradient_checkpointing': False, 'use_peft': False, 'peft_config': {'peft_method': 'lora', 'r': 8, 'lora_alpha': 32, 'target_modules': ['q_proj', 'v_proj'], 'bias': 'none', 'task_type': 'CAUSAL_LM', 'lora_dropout': 0.05, 'inference_mode': False}, 'output_dir': '/home/liu.ten/demo/tmp/TinyLlama-1.1B-librispeech-linear-steplrwarmupkeep1e-4-wavlm-large-20241111', 'freeze_layers': False, 'num_freeze_layers': 1, 'quantization': False, 'one_gpu': False, 'save_model': True, 'dist_checkpoint_root_folder': 'PATH/to/save/FSDP/model', 'dist_checkpoint_folder': 'fine-tuned', 'save_optimizer': False, 'use_fast_kernels': False, 'run_test_during_validation': False, 'run_test_during_validation_file': 'test.wav', 'run_test_during_validation_prompt': '<|ASR|>', 'freeze_llm': True, 'freeze_encoder': True}, 'fsdp_config': {'mixed_precision': True, 'use_fp16': True, 'sharding_strategy': 'NO_SHARD', 'checkpoint_type': 'SHARDED_STATE_DICT', 'fsdp_activation_checkpointing': True, 'fsdp_cpu_offload': False, 'pure_bf16': False, 'optimizer': 'AdamW'}, 'model_config': {'file': 'examples/asr_librispeech/model/slam_model_asr.py:model_factory', 'llm_name': 'TinyLlama-1.1B', 'llm_path': 'TinyLlama/TinyLlama-1.1B-Chat-v0.1', 'llm_type': 'decoder_only', 'llm_dim': 2048, 'encoder_name': 'wavlm', 'encoder_ds_rate': 2, 'encoder_path': '/home/liu.ten/demo/SLAM-LLM/src/slam_llm/models/WavLM-Large.pt', 'encoder_dim': 1024, 'encoder_projector': 'linear', 'encoder_projector_ds_rate': 5, 'modal': 'audio', 'normalize': True, 'encoder_type': 'finetune'}, 'log_config': {'use_wandb': True, 'wandb_dir': '/home/liu.ten/demo/test_wandb', 'wandb_entity_name': 'arno-liut', 'wandb_project_name': 'hate_speech_detection', 'wandb_exp_name': 'exp_2', 'log_file': '/home/liu.ten/test.log', 'log_interval': 5}}
+2024-11-11 19:52:05,780 INFO    MainThread:46932 [wandb_init.py:init():666] starting backend
+2024-11-11 19:52:05,780 INFO    MainThread:46932 [wandb_init.py:init():670] sending inform_init request
+2024-11-11 19:52:05,784 INFO    MainThread:46932 [backend.py:_multiprocessing_setup():104] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-11-11 19:52:05,784 INFO    MainThread:46932 [wandb_init.py:init():683] backend started and connected
+2024-11-11 19:52:05,792 INFO    MainThread:46932 [wandb_init.py:init():778] updated telemetry
+2024-11-11 19:52:05,805 INFO    MainThread:46932 [wandb_init.py:init():811] communicating run to backend with 90.0 second timeout
+2024-11-11 19:52:05,884 ERROR   MainThread:46932 [wandb_init.py:init():837] encountered error: failed to upsert bucket: returned error 403 Forbidden: {"errors":[{"message":"permission denied","path":["upsertBucket"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertBucket":null}}
+2024-11-11 19:52:05,884 ERROR   MainThread:46932 [wandb_init.py:init():1261] error in wandb.init()
+Traceback (most recent call last):
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/wandb/sdk/wandb_init.py", line 1251, in init
+    return wi.init()
+           ^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/wandb/sdk/wandb_init.py", line 843, in init
+    raise error
+wandb.errors.errors.CommError: failed to upsert bucket: returned error 403 Forbidden: {"errors":[{"message":"permission denied","path":["upsertBucket"],"extensions":{"code":"PERMISSION_ERROR"}}],"data":{"upsertBucket":null}}
+2024-11-11 19:52:06,059 WARNING MsgRouterThr:46932 [router.py:message_loop():77] message_loop has been closed

@@ -1,0 +1,18 @@
+{"time":"2024-11-15T03:03:41.844164319-05:00","level":"INFO","msg":"using version","core version":"0.18.2"}
+{"time":"2024-11-15T03:03:41.844179898-05:00","level":"INFO","msg":"created symlink","path":"/home/liu.ten/demo/test_wandb/wandb/run-20241115_030341-tvs1uqza/logs/debug-core.log"}
+{"time":"2024-11-15T03:03:41.846783992-05:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-11-15T03:03:41.865992699-05:00","level":"INFO","msg":"created new stream","id":"tvs1uqza"}
+{"time":"2024-11-15T03:03:41.866042433-05:00","level":"INFO","msg":"stream: started","id":"tvs1uqza"}
+{"time":"2024-11-15T03:03:41.866077017-05:00","level":"INFO","msg":"handler: started","stream_id":{"value":"tvs1uqza"}}
+{"time":"2024-11-15T03:03:41.866193436-05:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"tvs1uqza"}}
+{"time":"2024-11-15T03:03:41.866248759-05:00","level":"INFO","msg":"sender: started","stream_id":{"value":"tvs1uqza"}}
+{"time":"2024-11-15T03:03:42.126921609-05:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-11-15T03:03:42.133741941-05:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-15T03:03:55.371783544-05:00","level":"INFO","msg":"stream: closing","id":"tvs1uqza"}
+{"time":"2024-11-15T03:03:55.371911233-05:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-15T03:03:55.37458592-05:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-15T03:03:55.708811432-05:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-15T03:03:55.833611944-05:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"tvs1uqza"}}
+{"time":"2024-11-15T03:03:55.83366889-05:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"tvs1uqza"}}
+{"time":"2024-11-15T03:03:55.833687485-05:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"tvs1uqza"}}
+{"time":"2024-11-15T03:03:55.836646064-05:00","level":"INFO","msg":"stream: closed","id":"tvs1uqza"}

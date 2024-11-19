@@ -1,0 +1,12 @@
+{"time":"2024-11-15T04:29:19.696317572-05:00","level":"INFO","msg":"started logging, with flags","port-filename":"/tmp/tmp2npyz2go/port-9712.txt","pid":9712,"debug":false,"disable-analytics":false}
+{"time":"2024-11-15T04:29:19.696370671-05:00","level":"INFO","msg":"FeatureState","shutdownOnParentExitEnabled":false}
+{"time":"2024-11-15T04:29:19.697299423-05:00","level":"INFO","msg":"Will exit if parent process dies.","ppid":9712}
+{"time":"2024-11-15T04:29:19.697246564-05:00","level":"INFO","msg":"server is running","addr":{"IP":"127.0.0.1","Port":45089,"Zone":""}}
+{"time":"2024-11-15T04:29:19.886178318-05:00","level":"INFO","msg":"created new connection","id":"127.0.0.1:50500"}
+{"time":"2024-11-15T04:29:20.118522337-05:00","level":"INFO","msg":"connection init received","streamId":"5f1kcszo","id":"127.0.0.1:50500"}
+{"time":"2024-11-15T04:29:20.13704598-05:00","level":"INFO","msg":"connection init completed","streamId":"5f1kcszo","id":"127.0.0.1:50500"}
+{"time":"2024-11-15T04:29:20.903140099-05:00","level":"INFO","msg":"connection: teardown","id":"127.0.0.1:50500"}
+{"time":"2024-11-15T04:29:20.903289399-05:00","level":"INFO","msg":"closed connection","id":"127.0.0.1:50500"}
+{"time":"2024-11-15T04:29:20.903304187-05:00","level":"INFO","msg":"server is shutting down"}
+{"time":"2024-11-15T04:29:22.233009326-05:00","level":"INFO","msg":"connection closed","id":"127.0.0.1:50500"}
+{"time":"2024-11-15T04:29:22.233029784-05:00","level":"INFO","msg":"server is closed"}

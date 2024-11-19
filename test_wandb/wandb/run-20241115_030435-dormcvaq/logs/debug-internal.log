@@ -1,0 +1,18 @@
+{"time":"2024-11-15T03:04:35.328553234-05:00","level":"INFO","msg":"using version","core version":"0.18.2"}
+{"time":"2024-11-15T03:04:35.328573362-05:00","level":"INFO","msg":"created symlink","path":"/home/liu.ten/demo/test_wandb/wandb/run-20241115_030435-dormcvaq/logs/debug-core.log"}
+{"time":"2024-11-15T03:04:35.3300224-05:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-11-15T03:04:35.346148387-05:00","level":"INFO","msg":"created new stream","id":"dormcvaq"}
+{"time":"2024-11-15T03:04:35.346190496-05:00","level":"INFO","msg":"stream: started","id":"dormcvaq"}
+{"time":"2024-11-15T03:04:35.34624587-05:00","level":"INFO","msg":"sender: started","stream_id":{"value":"dormcvaq"}}
+{"time":"2024-11-15T03:04:35.346247212-05:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"dormcvaq"}}
+{"time":"2024-11-15T03:04:35.346263513-05:00","level":"INFO","msg":"handler: started","stream_id":{"value":"dormcvaq"}}
+{"time":"2024-11-15T03:04:35.538626913-05:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-11-15T03:04:35.543910023-05:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-15T03:09:13.200031853-05:00","level":"INFO","msg":"stream: closing","id":"dormcvaq"}
+{"time":"2024-11-15T03:09:13.200114518-05:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-15T03:09:13.20305291-05:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-15T03:09:13.563800583-05:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-15T03:09:13.665798635-05:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"dormcvaq"}}
+{"time":"2024-11-15T03:09:13.665834753-05:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"dormcvaq"}}
+{"time":"2024-11-15T03:09:13.665886811-05:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"dormcvaq"}}
+{"time":"2024-11-15T03:09:13.667653705-05:00","level":"INFO","msg":"stream: closed","id":"dormcvaq"}

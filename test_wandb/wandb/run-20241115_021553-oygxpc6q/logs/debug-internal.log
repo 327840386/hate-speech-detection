@@ -1,0 +1,19 @@
+{"time":"2024-11-15T02:15:53.809455918-05:00","level":"INFO","msg":"using version","core version":"0.18.2"}
+{"time":"2024-11-15T02:15:53.809468722-05:00","level":"INFO","msg":"created symlink","path":"/home/liu.ten/demo/test_wandb/wandb/run-20241115_021553-oygxpc6q/logs/debug-core.log"}
+{"time":"2024-11-15T02:15:53.810945832-05:00","level":"ERROR","msg":"dialing: google: could not find default credentials. See https://cloud.google.com/docs/authentication/external/set-up-adc for more information"}
+{"time":"2024-11-15T02:15:53.827370928-05:00","level":"INFO","msg":"created new stream","id":"oygxpc6q"}
+{"time":"2024-11-15T02:15:53.827416964-05:00","level":"INFO","msg":"stream: started","id":"oygxpc6q"}
+{"time":"2024-11-15T02:15:53.827446339-05:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"oygxpc6q"}}
+{"time":"2024-11-15T02:15:53.827465776-05:00","level":"INFO","msg":"handler: started","stream_id":{"value":"oygxpc6q"}}
+{"time":"2024-11-15T02:15:53.827457039-05:00","level":"INFO","msg":"sender: started","stream_id":{"value":"oygxpc6q"}}
+{"time":"2024-11-15T02:15:53.970877595-05:00","level":"INFO","msg":"wandb-core","!BADKEY":null}
+{"time":"2024-11-15T02:15:53.978859705-05:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-15T02:21:47.149797915-05:00","level":"INFO","msg":"stream: closing","id":"oygxpc6q"}
+{"time":"2024-11-15T02:21:47.149924753-05:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-15T02:21:52.153318612-05:00","level":"ERROR","msg":"monitor: gpu: timeout waiting for process to exit"}
+{"time":"2024-11-15T02:21:52.155462113-05:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-15T02:21:52.544031366-05:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-15T02:21:52.652177374-05:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"oygxpc6q"}}
+{"time":"2024-11-15T02:21:52.652206329-05:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"oygxpc6q"}}
+{"time":"2024-11-15T02:21:52.652283634-05:00","level":"INFO","msg":"sender: closed","stream_id":{"value":"oygxpc6q"}}
+{"time":"2024-11-15T02:21:52.655157754-05:00","level":"INFO","msg":"stream: closed","id":"oygxpc6q"}

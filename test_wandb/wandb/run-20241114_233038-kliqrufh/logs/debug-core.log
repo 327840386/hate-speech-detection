@@ -1,0 +1,12 @@
+{"time":"2024-11-14T23:30:37.945656325-05:00","level":"INFO","msg":"started logging, with flags","port-filename":"/tmp/tmp0n9yd60i/port-18041.txt","pid":18041,"debug":false,"disable-analytics":false}
+{"time":"2024-11-14T23:30:37.945681723-05:00","level":"INFO","msg":"FeatureState","shutdownOnParentExitEnabled":false}
+{"time":"2024-11-14T23:30:37.94649004-05:00","level":"INFO","msg":"Will exit if parent process dies.","ppid":18041}
+{"time":"2024-11-14T23:30:37.946469011-05:00","level":"INFO","msg":"server is running","addr":{"IP":"127.0.0.1","Port":46865,"Zone":""}}
+{"time":"2024-11-14T23:30:38.130356558-05:00","level":"INFO","msg":"created new connection","id":"127.0.0.1:59818"}
+{"time":"2024-11-14T23:30:38.459122491-05:00","level":"INFO","msg":"connection init received","streamId":"kliqrufh","id":"127.0.0.1:59818"}
+{"time":"2024-11-14T23:30:38.49503373-05:00","level":"INFO","msg":"connection init completed","streamId":"kliqrufh","id":"127.0.0.1:59818"}
+{"time":"2024-11-14T23:32:10.863169157-05:00","level":"INFO","msg":"connection: teardown","id":"127.0.0.1:59818"}
+{"time":"2024-11-14T23:32:10.863901852-05:00","level":"INFO","msg":"closed connection","id":"127.0.0.1:59818"}
+{"time":"2024-11-14T23:32:10.863918563-05:00","level":"INFO","msg":"server is shutting down"}
+{"time":"2024-11-14T23:32:12.337953276-05:00","level":"INFO","msg":"connection closed","id":"127.0.0.1:59818"}
+{"time":"2024-11-14T23:32:12.337975769-05:00","level":"INFO","msg":"server is closed"}

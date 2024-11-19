@@ -1,0 +1,7 @@
+{"time":"2024-11-18T20:35:24.166396064-05:00","level":"INFO","msg":"started logging, with flags","port-filename":"/tmp/tmp31jk5dkh/port-116184.txt","pid":116184,"debug":false,"disable-analytics":false}
+{"time":"2024-11-18T20:35:24.166444866-05:00","level":"INFO","msg":"FeatureState","shutdownOnParentExitEnabled":false}
+{"time":"2024-11-18T20:35:24.167437805-05:00","level":"INFO","msg":"Will exit if parent process dies.","ppid":116184}
+{"time":"2024-11-18T20:35:24.167400927-05:00","level":"INFO","msg":"server is running","addr":{"IP":"127.0.0.1","Port":37124,"Zone":""}}
+{"time":"2024-11-18T20:35:24.314137629-05:00","level":"INFO","msg":"created new connection","id":"127.0.0.1:40874"}
+{"time":"2024-11-18T20:35:24.646648954-05:00","level":"INFO","msg":"connection init received","streamId":"15soljdo","id":"127.0.0.1:40874"}
+{"time":"2024-11-18T20:35:24.71384069-05:00","level":"INFO","msg":"connection init completed","streamId":"15soljdo","id":"127.0.0.1:40874"}

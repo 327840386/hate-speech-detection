@@ -1,0 +1,42 @@
+/home/liu.ten/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+[2024-11-15 04:37:09][slam_llm.utils.train_utils][INFO] - --> Module TinyLlama-1.1B
+[2024-11-15 04:37:09][slam_llm.utils.train_utils][INFO] - --> TinyLlama-1.1B has 1100.05248 Million params
+
+[2024-11-15 04:37:09][slam_llm.utils.train_utils][INFO] - --> Module TinyLlama-1.1B
+[2024-11-15 04:37:09][slam_llm.utils.train_utils][INFO] - --> TinyLlama-1.1B has 1100.05248 Million params
+
+[2024-11-15 04:37:09][slam_llm.utils.train_utils][INFO] - --> Module linear
+[2024-11-15 04:37:09][slam_llm.utils.train_utils][INFO] - --> linear has 17.3056 Million params
+
+[2024-11-15 04:37:09][root][INFO] - Initializing model with experiment type: audio_only
+[2024-11-15 04:37:09][slam_llm.utils.train_utils][INFO] - --> Model PATH/to/LLAMA/7B
+[2024-11-15 04:37:09][slam_llm.utils.train_utils][INFO] - --> PATH/to/LLAMA/7B has 1117.35808 Million params
+
+[2024-11-15 04:37:10][root][INFO] - dataset_config: {'dataset': 'speech_dataset', 'file': 'src/slam_llm/datasets/speech_dataset.py:get_speech_dataset', 'train_data_path': '/home/liu.ten/demo/SLAM-LLM/examples/asr_librispeech/train_data.jsonl', 'val_data_path': None, 'train_split': 'train', 'test_split': 'validation', 'prompt': '', 'use_data_augmentation': True, 'data_path': None, 'max_words': None, 'max_mel': None, 'fix_length_audio': -1, 'inference_mode': False, 'input_type': 'raw', 'mel_size': 80, 'normalize': False}
+[2024-11-15 04:37:10][speech_dataset.py][INFO] - Dataset initialized with experiment_type: None
+Data augmentation enabled for train split
+[2024-11-15 04:37:10][root][INFO] - --> Training Set Length = 400
+[2024-11-15 04:37:10][speech_dataset.py][INFO] - Dataset initialized with experiment_type: None
+Error executing job with overrides: ['++train_config.enable_fsdp=false', '++train_config.enable_ddp=true', '++train_config.use_fp16=true']
+Traceback (most recent call last):
+  File "/home/liu.ten/demo/SLAM-LLM/examples/asr_librispeech/finetune_asr.py", line 46, in main_hydra
+    train(kwargs)
+  File "/home/liu.ten/demo/SLAM-LLM/src/slam_llm/pipeline/finetune.py", line 225, in main
+    dataset_val = get_preprocessed_dataset(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/demo/SLAM-LLM/src/slam_llm/utils/dataset_utils.py", line 60, in get_preprocessed_dataset
+    return get_custom_dataset(
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/demo/SLAM-LLM/src/slam_llm/utils/dataset_utils.py", line 43, in get_custom_dataset
+    return getattr(module, func_name)(dataset_config, tokenizer, split)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/slam_llm/datasets/speech_dataset.py", line 388, in get_speech_dataset
+    dataset = SpeechDatasetJsonl(dataset_config, tokenizer, split)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "src/slam_llm/datasets/speech_dataset.py", line 100, in __init__
+    with open(dataset_config.val_data_path, encoding='utf-8-sig') as fin:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

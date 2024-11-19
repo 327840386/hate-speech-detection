@@ -1,0 +1,214 @@
+/home/liu.ten/miniconda3/lib/python3.12/site-packages/huggingface_hub/file_download.py:1142: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/home/liu.ten/demo/SLAM-LLM/src/slam_llm/models/encoder.py:112: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(model_config.encoder_path)
+[2024-11-14 23:39:51][slam_llm.models.wavlm.WavLM][INFO] - WavLM Config: {'extractor_mode': 'layer_norm', 'encoder_layers': 24, 'encoder_embed_dim': 1024, 'encoder_ffn_embed_dim': 4096, 'encoder_attention_heads': 16, 'activation_fn': 'gelu', 'layer_norm_first': True, 'conv_feature_layers': '[(512,10,5)] + [(512,3,2)] * 4 + [(512,2,2)] * 2', 'conv_bias': False, 'feature_grad_mult': 1.0, 'normalize': True, 'dropout': 0.0, 'attention_dropout': 0.0, 'activation_dropout': 0.0, 'encoder_layerdrop': 0.0, 'dropout_input': 0.0, 'dropout_features': 0.0, 'mask_length': 10, 'mask_prob': 0.8, 'mask_selection': 'static', 'mask_other': 0.0, 'no_mask_overlap': False, 'mask_min_space': 1, 'mask_channel_length': 10, 'mask_channel_prob': 0.0, 'mask_channel_selection': 'static', 'mask_channel_other': 0.0, 'no_mask_channel_overlap': False, 'mask_channel_min_space': 1, 'conv_pos': 128, 'conv_pos_groups': 16, 'relative_position_embedding': True, 'num_buckets': 320, 'max_distance': 800, 'gru_rel_pos': True}
+/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/nn/utils/weight_norm.py:143: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+[2024-11-14 23:39:55][slam_llm.utils.train_utils][INFO] - --> Module wavlm
+[2024-11-14 23:39:55][slam_llm.utils.train_utils][INFO] - --> wavlm has 315.45312 Million params
+
+[2024-11-14 23:39:55][slam_llm.utils.train_utils][INFO] - --> Module wavlm
+[2024-11-14 23:39:55][slam_llm.utils.train_utils][INFO] - --> wavlm has 0.0 Million params
+
+[2024-11-14 23:40:01][slam_llm.utils.train_utils][INFO] - --> Module TinyLlama-1.1B
+[2024-11-14 23:40:01][slam_llm.utils.train_utils][INFO] - --> TinyLlama-1.1B has 1100.05248 Million params
+
+[2024-11-14 23:40:01][slam_llm.utils.train_utils][INFO] - --> Module TinyLlama-1.1B
+[2024-11-14 23:40:01][slam_llm.utils.train_utils][INFO] - --> TinyLlama-1.1B has 0.0 Million params
+
+[2024-11-14 23:40:01][slam_llm.utils.train_utils][INFO] - --> Module linear
+[2024-11-14 23:40:01][slam_llm.utils.train_utils][INFO] - --> linear has 14.68416 Million params
+
+[2024-11-14 23:40:01][slam_llm.utils.train_utils][INFO] - --> Model hate_speech_detection
+[2024-11-14 23:40:01][slam_llm.utils.train_utils][INFO] - --> hate_speech_detection has 14.68416 Million params
+
+[2024-11-14 23:40:02][root][INFO] - dataset_config: {'dataset': 'speech_dataset', 'file': 'src/slam_llm/datasets/speech_dataset.py:get_speech_dataset', 'train_data_path': '/home/liu.ten/demo/SLAM-LLM/examples/asr_librispeech/train_data.jsonl', 'val_data_path': '/home/liu.ten/demo/SLAM-LLM/examples/asr_librispeech/validation_data.jsonl', 'train_split': 'train', 'test_split': 'validation', 'prompt': '', 'use_data_augmentation': True, 'data_path': None, 'max_words': None, 'max_mel': None, 'fix_length_audio': -1, 'inference_mode': False, 'input_type': 'raw', 'mel_size': 80, 'normalize': True}
+Data augmentation enabled for train split
+[2024-11-14 23:40:03][root][INFO] - --> Training Set Length = 400
+[2024-11-14 23:40:03][root][INFO] - --> Validation Set Length = 50
+[2024-11-14 23:40:03][slam_llm.utils.config_utils][INFO] - Using batching strategy: custom
+[2024-11-14 23:40:03][slam_llm.utils.config_utils][INFO] - Using batching strategy: custom
+/home/liu.ten/demo/SLAM-LLM/src/slam_llm/utils/train_utils.py:76: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = torch.cuda.amp.GradScaler()
+/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/cuda/memory.py:365: FutureWarning: torch.cuda.reset_max_memory_allocated now calls torch.cuda.reset_peak_memory_stats, which resets /all/ peak memory stats.
+  warnings.warn(
+Training Epoch: 1:   0%|[34m                                                                                                                [0m| 0/50 [00:00<?, ?it/s][0m/home/liu.ten/demo/SLAM-LLM/src/slam_llm/utils/train_utils.py:115: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/nn/functional.py:5849: UserWarning: Support for mismatched key_padding_mask and attn_mask is deprecated. Use same type for both instead.
+  warnings.warn(
+/home/liu.ten/demo/SLAM-LLM/src/slam_llm/utils/train_utils.py:121: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  total_acc += torch.tensor(acc, device=loss.device)
+Training Epoch: 1/400, step 49/50 completed (loss: 3.8816075325012207, acc: 0.25): 100%|[34m███████████████████████████████████████[0m| 50/50 [00:34<00:00,  1.46it/s][0m
+[2024-11-14 23:40:37][slam_llm.utils.train_utils][INFO] - Epoch 1: train_perplexity=67341.5469, train_epoch_loss=11.1175, epoch time 34.86138554697391s
+[2024-11-14 23:40:37][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 18 GB
+[2024-11-14 23:40:37][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 18 GB
+[2024-11-14 23:40:37][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 18 GB
+[2024-11-14 23:40:37][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-14 23:40:37][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 3 GB
+Training Epoch: 2/400, step 49/50 completed (loss: 0.651078462600708, acc: 0.75): 100%|[34m████████████████████████████████████████[0m| 50/50 [00:32<00:00,  1.72it/s][0m/home/liu.ten/demo/SLAM-LLM/src/slam_llm/utils/train_utils.py:430: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():[32m                                                                                                                       [0m| 0/10 [00:00<?, ?it/s][0m
+Step: 10/10, Loss: 0.6312, Acc: 0.8200: 100%|[32m██████████████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:04<00:00,  2.00it/s][0m
+/home/liu.ten/demo/SLAM-LLM/src/slam_llm/utils/train_utils.py:471: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  eval_epoch_loss_tensor = torch.tensor(eval_epoch_loss).to(device)
+[2024-11-14 23:41:16][slam_llm.utils.train_utils][INFO] - llm is frozen, we are about to save other parts.
+[2024-11-14 23:41:16][slam_llm.utils.checkpoint_handler][INFO] - --> saving model ...
+[2024-11-14 23:41:16][slam_llm.utils.checkpoint_handler][INFO] - encoder saved at /home/liu.ten/demo/tmp/audio_only-TinyLlama-1.1B-librispeech-linear-steplrwarmupkeep1e-4-wavlm-large-20241114/hate_speech_detection_epoch_2_step_50_acc_0.8200/model.pt
+[2024-11-14 23:41:16][slam_llm.utils.train_utils][INFO] - New best accuracy on epoch 2: 0.8200
+Training Epoch: 2/400, step 49/50 completed (loss: 0.651078462600708, acc: 0.75): 100%|[34m████████████████████████████████████████[0m| 50/50 [00:38<00:00,  1.29it/s][0m
+[2024-11-14 23:41:17][slam_llm.utils.train_utils][INFO] - Epoch 2: train_perplexity=5.1529, train_epoch_loss=1.6396, epoch time 39.40404120803578s
+[2024-11-14 23:41:17][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-14 23:41:17][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-14 23:41:17][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-14 23:41:17][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-14 23:41:17][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 4 GB
+Training Epoch: 3/400, step 49/50 completed (loss: 0.4114716053009033, acc: 0.8125): 100%|[34m█████████████████████████████████████[0m| 50/50 [00:34<00:00,  1.47it/s][0m
+[2024-11-14 23:41:52][slam_llm.utils.train_utils][INFO] - Epoch 3: train_perplexity=1.4735, train_epoch_loss=0.3877, epoch time 34.777928597002756s
+[2024-11-14 23:41:52][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 17 GB
+[2024-11-14 23:41:52][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 18 GB
+[2024-11-14 23:41:52][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 17 GB
+[2024-11-14 23:41:52][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-14 23:41:52][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 4 GB
+Step: 10/10, Loss: 0.2907, Acc: 0.9100: 100%|[32m██████████████████████████████████████████████████████████████████████████████████[0m| 10/10 [00:05<00:00,  1.93it/s][0m
+Training Epoch: 4/400, step 49/50 completed (loss: 0.20142315328121185, acc: 0.875): 100%|[34m█████████████████████████████████████[0m| 50/50 [00:39<00:00,  1.26it/s][0m
+[2024-11-14 23:42:31][slam_llm.utils.train_utils][INFO] - llm is frozen, we are about to save other parts.
+[2024-11-14 23:42:31][slam_llm.utils.checkpoint_handler][INFO] - --> saving model ...
+[2024-11-14 23:42:31][slam_llm.utils.checkpoint_handler][INFO] - encoder saved at /home/liu.ten/demo/tmp/audio_only-TinyLlama-1.1B-librispeech-linear-steplrwarmupkeep1e-4-wavlm-large-20241114/hate_speech_detection_epoch_4_step_50_acc_0.9100/model.pt
+[2024-11-14 23:42:31][slam_llm.utils.train_utils][INFO] - New best accuracy on epoch 4: 0.9100
+[2024-11-14 23:42:32][slam_llm.utils.train_utils][INFO] - Epoch 4: train_perplexity=1.3027, train_epoch_loss=0.2645, epoch time 40.299294078024104s
+[2024-11-14 23:42:32][slam_llm.utils.train_utils][INFO] - Max CUDA memory allocated was 9 GB
+[2024-11-14 23:42:32][slam_llm.utils.train_utils][INFO] - Max CUDA memory reserved was 10 GB
+[2024-11-14 23:42:32][slam_llm.utils.train_utils][INFO] - Peak active CUDA memory was 9 GB
+[2024-11-14 23:42:32][slam_llm.utils.train_utils][INFO] - Cuda Malloc retires : 0
+[2024-11-14 23:42:32][slam_llm.utils.train_utils][INFO] - CPU Total Peak Memory consumed during the train (max): 4 GB
+Training Epoch: 5/400, step 24/50 completed (loss: 0.19147889316082, acc: 0.875):  50%|[34m████████████████████                    [0m| 25/50 [00:19<00:14,  1.73it/s][0mException in thread Thread-17 (_pin_memory_loop):
+Traceback (most recent call last):
+  File "/home/liu.ten/miniconda3/lib/python3.12/threading.py", line 1075, in _bootstrap_inner
+    self.run()
+  File "/home/liu.ten/miniconda3/lib/python3.12/threading.py", line 1012, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py", line 59, in _pin_memory_loop
+    do_one_step()
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py", line 35, in do_one_step
+    r = in_queue.get(timeout=MP_STATUS_CHECK_INTERVAL)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/multiprocessing/queues.py", line 122, in get
+    return _ForkingPickler.loads(res)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/multiprocessing/reductions.py", line 541, in rebuild_storage_fd
+    fd = df.detach()
+         ^^^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/multiprocessing/resource_sharer.py", line 57, in detach
+    with _resource_sharer.get_connection(self._id) as conn:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/multiprocessing/resource_sharer.py", line 86, in get_connection
+    c = Client(address, authkey=process.current_process().authkey)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/multiprocessing/connection.py", line 519, in Client
+    c = SocketClient(address)
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/multiprocessing/connection.py", line 647, in SocketClient
+    s.connect(address)
+FileNotFoundError: [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/home/liu.ten/demo/SLAM-LLM/examples/asr_librispeech/finetune_asr.py", line 49, in <module>
+    main_hydra()
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/main.py", line 94, in decorated_main
+    _run_hydra(
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+    _run_app(
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+    run_and_report(
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+    return func()
+           ^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+    lambda: hydra.run(
+            ^^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/_internal/hydra.py", line 119, in run
+    ret = run_job(
+          ^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/core/utils.py", line 186, in run_job
+    ret.return_value = task_function(task_cfg)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/demo/SLAM-LLM/examples/asr_librispeech/finetune_asr.py", line 45, in main_hydra
+    train(kwargs)
+  File "/home/liu.ten/demo/SLAM-LLM/src/slam_llm/pipeline/finetune.py", line 299, in main
+    results = train(
+              ^^^^^^
+  File "/home/liu.ten/demo/SLAM-LLM/src/slam_llm/utils/train_utils.py", line 116, in train
+    outputs, *rest = model(**batch)
+                     ^^^^^^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/nn/parallel/distributed.py", line 1643, in forward
+    else self._run_ddp_forward(*inputs, **kwargs)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/nn/parallel/distributed.py", line 1459, in _run_ddp_forward
+    return self.module(*inputs, **kwargs)  # type: ignore[index]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/liu.ten/demo/SLAM-LLM/src/slam_llm/models/slam_model.py", line 379, in forward
+    modality_lengths = torch.clamp(modality_mask.sum(dim=1), max=encoder_outs.shape[1]).tolist()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/liu.ten/demo/SLAM-LLM/examples/asr_librispeech/finetune_asr.py", line 49, in <module>
+[rank0]:     main_hydra()
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/main.py", line 94, in decorated_main
+[rank0]:     _run_hydra(
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/_internal/utils.py", line 394, in _run_hydra
+[rank0]:     _run_app(
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/_internal/utils.py", line 457, in _run_app
+[rank0]:     run_and_report(
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+[rank0]:     return func()
+[rank0]:            ^^^^^^
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/_internal/utils.py", line 458, in <lambda>
+[rank0]:     lambda: hydra.run(
+[rank0]:             ^^^^^^^^^^
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/_internal/hydra.py", line 119, in run
+[rank0]:     ret = run_job(
+[rank0]:           ^^^^^^^^
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/hydra/core/utils.py", line 186, in run_job
+[rank0]:     ret.return_value = task_function(task_cfg)
+[rank0]:                        ^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/liu.ten/demo/SLAM-LLM/examples/asr_librispeech/finetune_asr.py", line 45, in main_hydra
+[rank0]:     train(kwargs)
+[rank0]:   File "/home/liu.ten/demo/SLAM-LLM/src/slam_llm/pipeline/finetune.py", line 299, in main
+[rank0]:     results = train(
+[rank0]:               ^^^^^^
+[rank0]:   File "/home/liu.ten/demo/SLAM-LLM/src/slam_llm/utils/train_utils.py", line 116, in train
+[rank0]:     outputs, *rest = model(**batch)
+[rank0]:                      ^^^^^^^^^^^^^^
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/nn/parallel/distributed.py", line 1643, in forward
+[rank0]:     else self._run_ddp_forward(*inputs, **kwargs)
+[rank0]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/nn/parallel/distributed.py", line 1459, in _run_ddp_forward
+[rank0]:     return self.module(*inputs, **kwargs)  # type: ignore[index]
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/liu.ten/miniconda3/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/liu.ten/demo/SLAM-LLM/src/slam_llm/models/slam_model.py", line 379, in forward
+[rank0]:     modality_lengths = torch.clamp(modality_mask.sum(dim=1), max=encoder_outs.shape[1]).tolist()
+[rank0]:                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]: KeyboardInterrupt

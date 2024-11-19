@@ -1,0 +1,12 @@
+{"time":"2024-11-15T04:37:01.470983389-05:00","level":"INFO","msg":"started logging, with flags","port-filename":"/tmp/tmplg5tr4fy/port-11886.txt","pid":11886,"debug":false,"disable-analytics":false}
+{"time":"2024-11-15T04:37:01.471025177-05:00","level":"INFO","msg":"FeatureState","shutdownOnParentExitEnabled":false}
+{"time":"2024-11-15T04:37:01.471888536-05:00","level":"INFO","msg":"Will exit if parent process dies.","ppid":11886}
+{"time":"2024-11-15T04:37:01.471866846-05:00","level":"INFO","msg":"server is running","addr":{"IP":"127.0.0.1","Port":44998,"Zone":""}}
+{"time":"2024-11-15T04:37:01.662408-05:00","level":"INFO","msg":"created new connection","id":"127.0.0.1:33080"}
+{"time":"2024-11-15T04:37:01.893238923-05:00","level":"INFO","msg":"connection init received","streamId":"mtcha3qr","id":"127.0.0.1:33080"}
+{"time":"2024-11-15T04:37:01.911058185-05:00","level":"INFO","msg":"connection init completed","streamId":"mtcha3qr","id":"127.0.0.1:33080"}
+{"time":"2024-11-15T04:37:11.043418997-05:00","level":"INFO","msg":"connection: teardown","id":"127.0.0.1:33080"}
+{"time":"2024-11-15T04:37:11.043749497-05:00","level":"INFO","msg":"closed connection","id":"127.0.0.1:33080"}
+{"time":"2024-11-15T04:37:11.043749517-05:00","level":"INFO","msg":"server is shutting down"}
+{"time":"2024-11-15T04:37:11.539655733-05:00","level":"INFO","msg":"connection closed","id":"127.0.0.1:33080"}
+{"time":"2024-11-15T04:37:11.539685208-05:00","level":"INFO","msg":"server is closed"}

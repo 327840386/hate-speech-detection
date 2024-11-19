@@ -1,0 +1,12 @@
+{"time":"2024-11-15T03:03:41.338799123-05:00","level":"INFO","msg":"started logging, with flags","port-filename":"/tmp/tmp5cefnfh1/port-6257.txt","pid":6257,"debug":false,"disable-analytics":false}
+{"time":"2024-11-15T03:03:41.338842895-05:00","level":"INFO","msg":"FeatureState","shutdownOnParentExitEnabled":false}
+{"time":"2024-11-15T03:03:41.33967754-05:00","level":"INFO","msg":"Will exit if parent process dies.","ppid":6257}
+{"time":"2024-11-15T03:03:41.339633498-05:00","level":"INFO","msg":"server is running","addr":{"IP":"127.0.0.1","Port":35117,"Zone":""}}
+{"time":"2024-11-15T03:03:41.52839394-05:00","level":"INFO","msg":"created new connection","id":"127.0.0.1:54392"}
+{"time":"2024-11-15T03:03:41.824530504-05:00","level":"INFO","msg":"connection init received","streamId":"tvs1uqza","id":"127.0.0.1:54392"}
+{"time":"2024-11-15T03:03:41.866048344-05:00","level":"INFO","msg":"connection init completed","streamId":"tvs1uqza","id":"127.0.0.1:54392"}
+{"time":"2024-11-15T03:03:55.369930779-05:00","level":"INFO","msg":"connection: teardown","id":"127.0.0.1:54392"}
+{"time":"2024-11-15T03:03:55.371855178-05:00","level":"INFO","msg":"server is shutting down"}
+{"time":"2024-11-15T03:03:55.371861109-05:00","level":"INFO","msg":"closed connection","id":"127.0.0.1:54392"}
+{"time":"2024-11-15T03:03:55.836745551-05:00","level":"INFO","msg":"connection closed","id":"127.0.0.1:54392"}
+{"time":"2024-11-15T03:03:55.836765088-05:00","level":"INFO","msg":"server is closed"}
