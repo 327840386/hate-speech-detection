@@ -138,7 +138,7 @@ class slam_model_asr(slam_model):
 {base_prompt}
 
 A:"""
-        else:  # exp2
+        else:  # exp1
             prompt = f"USER: {transcribed_text}\nASSISTANT:"
 
         # Encode prompt
