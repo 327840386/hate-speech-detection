@@ -78,22 +78,22 @@ class slam_model_asr(slam_model):
     ):
         device = kwargs.get("device", "cuda")
         
-        # 获取实验类型
+        # Get the experiment type
         exp_type = getattr(self.train_config, "experiment_type", None)
         if exp_type not in ["exp1", "exp2", "exp3"]:
             raise ValueError(f"Invalid or no experiment type specified in train_config: {exp_type}")
 
-        # 处理音频数据
+        # Processing audio features
         encoder_outs = None
         transcribed_text = ""
         if os.path.exists(wav_path) and exp_type in ["exp1", "exp2"]:
             import whisper
             
-            # 1. 加载并预处理音频
+            # 1. Loading and preprocessing the adio
             audio_raw = whisper.load_audio(wav_path)
             audio_raw = whisper.pad_or_trim(audio_raw)
             
-            # 2. 提取音频特征
+            # 2. extract audio features
             mel_size = getattr(self.dataset_config, "mel_size", 80)
             audio_mel = (
                 whisper.log_mel_spectrogram(audio_raw, n_mels=mel_size)
@@ -101,7 +101,7 @@ class slam_model_asr(slam_model):
                 .to(device)
             )
             
-            # 3. 获取Whisper转录
+            # 3. Get the whisper transcription
             try:
                 whisper_model = whisper.load_model("base")
                 transcription_result = whisper_model.transcribe(wav_path)
@@ -110,7 +110,7 @@ class slam_model_asr(slam_model):
                 logger.warning(f"Whisper transcription failed: {e}")
                 transcribed_text = "[Transcription failed]"
             
-            # 4. 处理音频特征
+            # 4. Process audio features
             encoder_outs = self.encoder.extract_features(
                 audio_mel.permute(0, 2, 1)
             )[0]
@@ -128,11 +128,11 @@ class slam_model_asr(slam_model):
                 1, 0, self.llm.model.embed_tokens.embedding_dim
             ).to(device)
 
-        # 获取prompt模板
+        # Get the prompt template
         base_prompt = getattr(self.dataset_config, "prompt", "")
         
-        # 根据实验类型构建prompt
-        if exp_type in ["exp1", "exp3"]:
+        # Build the prompt based on experiment type
+        if exp_type in ["exp2", "exp3"]:
             prompt = f"""USER: The transcription of the audio is: "{transcribed_text}"
 
 {base_prompt}
@@ -141,11 +141,11 @@ A:"""
         else:  # exp2
             prompt = f"USER: {transcribed_text}\nASSISTANT:"
 
-        # 编码prompt
+        # Encode prompt
         prompt_ids = self.tokenizer.encode(prompt)
         prompt_ids = torch.tensor(prompt_ids, dtype=torch.int64).to(device)
         
-        # 获取token embeddings
+        # Get the token embeddings
         if hasattr(self.llm.model, "embed_tokens"):
             inputs_embeds = self.llm.model.embed_tokens(prompt_ids)
         elif hasattr(self.llm.model.model, "embed_tokens"):
@@ -153,7 +153,7 @@ A:"""
         else:
             inputs_embeds = self.llm.model.model.model.embed_tokens(prompt_ids)
         
-        # 只在exp1和exp2时使用音频特征
+        # Use of audio features only at exp1 and exp2
         if exp_type in ["exp1", "exp2"]:
             inputs_embeds = torch.cat(
                 (encoder_outs, inputs_embeds[None, :, :]), dim=1
@@ -164,17 +164,17 @@ A:"""
         attention_mask = torch.ones(inputs_embeds.size()[:-1], dtype=torch.long).to(device)
 
         generation_kwargs = {
-            'max_new_tokens': 10,          # 限制输出长度
-            'min_new_tokens': 2,           # 确保完整回答
-            'temperature': 0.7,            # 降低随机性
-            'do_sample': False,            # 使用贪婪解码
-            'num_beams': 1,               # 简单束搜索
+            'max_new_tokens': 10,          # Limit output length
+            'min_new_tokens': 2,           # Ensure complete answers
+            'temperature': 0.7,            # Reduced randomness
+            'do_sample': False,            # Using Greedy Decoding
+            'num_beams': 1,               # Simple Beam Search
             'pad_token_id': self.tokenizer.pad_token_id,
             'eos_token_id': self.tokenizer.eos_token_id,
         }
-        generation_kwargs.update(kwargs)  # 允许覆盖默认值
+        generation_kwargs.update(kwargs)  # Allow overriding of default values
 
-        # 生成并清理输出
+        # Generate and clean up output
         raw_output = self.generate(
             inputs_embeds=inputs_embeds,
             attention_mask=attention_mask,
