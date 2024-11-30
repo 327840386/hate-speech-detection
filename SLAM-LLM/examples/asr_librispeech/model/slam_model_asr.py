@@ -74,26 +74,27 @@ class slam_model_asr(slam_model):
     def inference(
         self,
         wav_path=None,
+        prompt=None,
         **kwargs,
     ):
         device = kwargs.get("device", "cuda")
         
-        # Get the experiment type
+        # Get Experiment Type
         exp_type = getattr(self.train_config, "experiment_type", None)
         if exp_type not in ["exp1", "exp2", "exp3"]:
             raise ValueError(f"Invalid or no experiment type specified in train_config: {exp_type}")
 
-        # Processing audio features
+        # Processing audio data
         encoder_outs = None
         transcribed_text = ""
-        if os.path.exists(wav_path) and exp_type in ["exp1", "exp2"]:
+        if os.path.exists(wav_path) and exp_type in ["exp1", "exp2"]:  # 只在exp1和exp2处理音频
             import whisper
             
-            # 1. Loading and preprocessing the adio
+            # 1. Load and pre-process audio
             audio_raw = whisper.load_audio(wav_path)
             audio_raw = whisper.pad_or_trim(audio_raw)
             
-            # 2. extract audio features
+            # 2. Extracting audio features
             mel_size = getattr(self.dataset_config, "mel_size", 80)
             audio_mel = (
                 whisper.log_mel_spectrogram(audio_raw, n_mels=mel_size)
@@ -101,16 +102,17 @@ class slam_model_asr(slam_model):
                 .to(device)
             )
             
-            # 3. Get the whisper transcription
-            try:
-                whisper_model = whisper.load_model("base")
-                transcription_result = whisper_model.transcribe(wav_path)
-                transcribed_text = transcription_result["text"]
-            except Exception as e:
-                logger.warning(f"Whisper transcription failed: {e}")
-                transcribed_text = "[Transcription failed]"
+            # 3. Get Whisper transcripts only at exp2
+            if exp_type == "exp2":
+                try:
+                    whisper_model = whisper.load_model("base")
+                    transcription_result = whisper_model.transcribe(wav_path)
+                    transcribed_text = transcription_result["text"]
+                except Exception as e:
+                    logger.warning(f"Whisper transcription failed: {e}")
+                    transcribed_text = "[Transcription failed]"
             
-            # 4. Process audio features
+            # 4. Processing audio features
             encoder_outs = self.encoder.extract_features(
                 audio_mel.permute(0, 2, 1)
             )[0]
@@ -122,30 +124,32 @@ class slam_model_asr(slam_model):
                 encoder_outs = self.encoder_projector(encoder_outs, audio_mel_post_mask)
             elif self.model_config.encoder_projector == "linear":
                 encoder_outs = self.encoder_projector(encoder_outs)
+        
+        elif exp_type == "exp3":  # Exp3 only requires whisper transcription
+            try:
+                whisper_model = whisper.load_model("base")
+                transcription_result = whisper_model.transcribe(wav_path)
+                transcribed_text = transcription_result["text"]
+            except Exception as e:
+                logger.warning(f"Whisper transcription failed: {e}")
+                transcribed_text = "[Transcription failed]"
 
         if encoder_outs is None:
             encoder_outs = torch.empty(
                 1, 0, self.llm.model.embed_tokens.embedding_dim
             ).to(device)
 
-        # Get the prompt template
-        base_prompt = getattr(self.dataset_config, "prompt", "")
-        
-        # Build the prompt based on experiment type
-        if exp_type in ["exp2", "exp3"]:
-            prompt = f"""USER: The transcription of the audio is: "{transcribed_text}"
+        # Build the prompt based on the type of experiment
+        if exp_type == "exp1":  # Audio feature only, no need for transcription
+            formatted_prompt = f"USER: {prompt}\nASSISTANT:"
+        elif exp_type in ["exp2", "exp3"]:  # Both exp2 and exp3 need to include the TRANSCRIPT in their prompts!
+            formatted_prompt = f"USER: The transcription of the audio is: {transcribed_text}\n{prompt}\nASSISTANT:"
 
-{base_prompt}
-
-A:"""
-        else:  # exp1
-            prompt = f"USER: {transcribed_text}\nASSISTANT:"
-
-        # Encode prompt
-        prompt_ids = self.tokenizer.encode(prompt)
+        # Encoding Prompt
+        prompt_ids = self.tokenizer.encode(formatted_prompt)
         prompt_ids = torch.tensor(prompt_ids, dtype=torch.int64).to(device)
         
-        # Get the token embeddings
+        # Get token embeddings
         if hasattr(self.llm.model, "embed_tokens"):
             inputs_embeds = self.llm.model.embed_tokens(prompt_ids)
         elif hasattr(self.llm.model.model, "embed_tokens"):
@@ -153,26 +157,26 @@ A:"""
         else:
             inputs_embeds = self.llm.model.model.model.embed_tokens(prompt_ids)
         
-        # Use of audio features only at exp1 and exp2
+        # exp1 and exp2 need to concatenate audio features
         if exp_type in ["exp1", "exp2"]:
             inputs_embeds = torch.cat(
                 (encoder_outs, inputs_embeds[None, :, :]), dim=1
             )
-        else:
+        else:  # exp3 uses only text embeddings
             inputs_embeds = inputs_embeds[None, :, :]
         
         attention_mask = torch.ones(inputs_embeds.size()[:-1], dtype=torch.long).to(device)
 
         generation_kwargs = {
-            'max_new_tokens': 10,          # Limit output length
-            'min_new_tokens': 2,           # Ensure complete answers
-            'temperature': 0.7,            # Reduced randomness
-            'do_sample': False,            # Using Greedy Decoding
-            'num_beams': 1,               # Simple Beam Search
+            'max_new_tokens': 10,
+            'min_new_tokens': 2,
+            'temperature': 0.7,
+            'do_sample': False,
+            'num_beams': 1,
             'pad_token_id': self.tokenizer.pad_token_id,
             'eos_token_id': self.tokenizer.eos_token_id,
         }
-        generation_kwargs.update(kwargs)  # Allow overriding of default values
+        generation_kwargs.update(kwargs)
 
         # Generate and clean up output
         raw_output = self.generate(
@@ -183,7 +187,7 @@ A:"""
         
         decoded_output = self.tokenizer.decode(raw_output[0], skip_special_tokens=True)
         return self.clean_output_text(decoded_output)
-
+    
     def clean_output_text(self, text):
         """
         Clean and standardize model output
