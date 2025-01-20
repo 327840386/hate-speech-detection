@@ -3,3 +3,5 @@ You can find the logs and .pt files in our google drive https://drive.google.com
 Our speech encoder is WavLM-large, you can find it in https://huggingface.co/microsoft/wavlm-large
 
 Our LLM is TinyLlama-1.1B-Chat-v1.0, you can find it in https://huggingface.co/TinyLlama/TinyLlama-1.1B-Chat-v1.0
+
+You can find the paper we have written it called Hate Speech Detection in Social VR_Final Report (1).pdf
